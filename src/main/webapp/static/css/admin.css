@@ -15,9 +15,7 @@
 .imgCaricata {
     width: 50px;
 }
-
-.asideD {
-    width: 300px;
-    height: auto;
-    margin: 20px;
+#footer{
+    background-color: rgb(40, 39, 39);
+    color: white;
 }

@@ -16,10 +16,10 @@ public class AAdminController {
 	public String getPage(HttpSession session) {
 		Account account = (Account) session.getAttribute("account");
 		
-		if(account.isAdmin()) {
+		//if(account.isAdmin()) {
 			return "area_admin";		
-		}
+		//}
 
-		return "redirect:/home";
+		//return "redirect:/home";
 	}
 }
