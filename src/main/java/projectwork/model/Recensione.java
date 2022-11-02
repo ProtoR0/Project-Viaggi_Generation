@@ -13,8 +13,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
 @Entity
-@Table(name = "recenzioni")
-public class Recenzioni implements Serializable{
+@Table(name = "recensioni")
+public class Recensione implements Serializable{
 
 	private static final long serialVersionUID = 3163140512569871504L;
 
