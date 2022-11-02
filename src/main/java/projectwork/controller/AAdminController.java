@@ -23,8 +23,6 @@ public class AAdminController {
 			}
 		}
 		
-		
-
 		return "redirect:/home";
 	}
 }
