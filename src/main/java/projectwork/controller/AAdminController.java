@@ -14,11 +14,16 @@ public class AAdminController {
 	
 	@GetMapping
 	public String getPage(HttpSession session) {
-		Account account = (Account) session.getAttribute("account");
 		
-		if(account.isAdmin()) {
-			return "area_admin";		
+		if(session.getAttribute("account") != null) {
+		 Account account = (Account) session.getAttribute("acccount");
+		
+			if(account.isAdmin()) {
+				return "area_admin";		
+			}
 		}
+		
+		
 
 		return "redirect:/home";
 	}

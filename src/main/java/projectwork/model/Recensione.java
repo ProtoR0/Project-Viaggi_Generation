@@ -22,9 +22,8 @@ public class Recensione implements Serializable{
 	@GeneratedValue
 	private int id;
 	
-	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "id_destinazione", referencedColumnName = "id")
-	private Destinazione destinazione;
+	@Column(name = "destinazione", length = 25)
+	private String destinazione;
 	
 	@Column(name = "titolo", length = 50, nullable = false)
 	@Pattern(regexp = "[a-zA-Z\\s]{5,50}", message = "error.titolo")
@@ -39,14 +38,6 @@ public class Recensione implements Serializable{
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Destinazione getDestinazione() {
-		return destinazione;
-	}
-
-	public void setDestinazione(Destinazione destinazione) {
-		this.destinazione = destinazione;
 	}
 
 	public String getTitolo() {
@@ -64,7 +55,5 @@ public class Recensione implements Serializable{
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	
-	
 	
 }
