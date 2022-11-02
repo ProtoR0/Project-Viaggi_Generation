@@ -40,25 +40,25 @@
                 <div class="col-4" id="centro">
                     <h3>Area Admin</h3>
                     <form action="GET">
-                        <p>Destinazione
+                        <label>Destinazione
                         <select name="destinazione">
                             <option value="italia">Italia</option>
                             <option value="europa">Europa</option>
                             <option value="altro">Altro</option>
-                        </select></p>
+                        </select></label>
                         <br />
-                        <p>Titolo
-                        <input type="text" placeholder="Titolo"></p>
-                        <p>Descrizione
-                        <input type="textarea" placeholder="Descrizione"></p>
-                        <p>Gallery
+                        <label>Titolo</label>
+                        <input type="text" placeholder="Titolo"><br/>
+                        <label>Descrizione</label>
+                        <input type="textarea" placeholder="Descrizione"><br/>
+                        <label>Gallery</label>
                         <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
                         <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata"> <!--collegare foto caricare dall'utente-->
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata"></p>
+                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
 
-                        
-                        <p>Pubblicare <input type="checkbox" value="Pubblicare"></p> <br />
-                        <p>Non Pubblicare <input type="checkbox" value="Non Pubblicare"></p>
+                        <br/>
+                        <label>Pubblicare</label> <input type="checkbox" value="Pubblicare"> <br />
+                        <label>Non Pubblicare</label> <input type="checkbox" value="Non Pubblicare">
                         <br>
                         <br>
                         <table>
