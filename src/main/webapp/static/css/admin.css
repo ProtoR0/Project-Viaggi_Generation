@@ -1,3 +1,15 @@
 #fotoHome{
     width: 100%;
 }
+
+.aside {
+    width: 300px;
+    height: auto;
+    margin: 20px;
+}
+
+#centro {
+    margin-top: 20px;
+}
+
+

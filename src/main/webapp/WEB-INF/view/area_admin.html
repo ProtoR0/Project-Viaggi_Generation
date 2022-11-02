@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,43 +20,19 @@
 
             <div class="row" id="menu">     <!--Menu-->
                 <div class="col-12" id="menu">
-                    <div class="dropdown  justify-content-center">    
-                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <div class="container-fluid">
-                          <a class="navbar-brand" href="#" id="home">Home</a>
-                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
-                          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                            <ul class="navbar-nav">
-                              <li class="nav-item">
-                                <a class="nav-link" href="#" role="button">
-                                  Recensioni
-                                </a>
-                              </li>
-                
-                              <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Viaggi
-                                </a>
-                              </li>
-                              <li class="nav">
-                                <p th:text="Ciao ${nome}"></p>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </nav>                    
-                    </div>
+                    <nav th:replace="../template/template :: navFragment"></nav>
               </div>
             </div>
           </header>
           <section>
             <div class="row">
-                <div class="col-3">
-                    <!--foto laterali sinistra-->
+                <div class="col-4">
+                    <img class="aside" src="/static/img/Venezia.jpg">
+                    <img class="aside" src="/static/img/roma.jpg">
+                    <img class="aside" src="/static/img/milano.jpg">
+                    <img class="aside" src="/static/img/monaco.jpg">
                 </div>
-                <div class="col-7">
+                <div class="col-4" id="centro">
                 <h3>Area Admin</h3>
                 <form action="GET">
                     <p>Destinazione</p>
@@ -78,15 +54,8 @@
                     <p>Pubblicazione</p>
                     <p>Pubblicare</p><input type="checkbox" value="Pubblicare">
                     <p>Non Pubblicare</p><input type="checkbox" value="Non Pubblicare">
-                    <div class="col-3">
-                        <!--foto laterali destra-->
-                    </div>
-                </form>
-            <div class="row">
-                <div class="col-3">
-                    <!--foto laterale-->
-                </div>
-                <div class="col-7">
+                    <br>
+                    <br>
                     <table>
                         <th>
                             <tr><td>Lista viaggi</td></tr>
@@ -106,25 +75,16 @@
                         </tr>
                     </table>
                 </div>
-                    <div class="col-3">
-                        <!--foto laterali-->
-                    </div>
+                </form>
+                <div class="col-4">
+                    <img class="aside" src="/static/img/munchen.jpg">
+                    <img class="aside" src="/static/img/parigi.jpg">
+                    <img class="aside" src="/static/img/londra.jpg">
+                    <img class="aside" src="/static/img/zanzibar.jpg">
+                </div>
             </div>
-        </div>
           </section>
-          <footer>
-            <div class="row" id="footer">
-                <div class="col-4">
-                    <h5>Contatti</h5>
-                </div>
-                <div class="col-4">
-
-                </div>
-                <div class="col-4">
-
-                </div>
-            </div>
-          </footer>
+          <footer th:replace="../template/template :: footerFragment"></footer>
     </div>
 </body>
 </html>
