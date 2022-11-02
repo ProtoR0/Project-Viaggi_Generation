@@ -25,6 +25,6 @@ public class AAdminController {
 		
 		
 
-		//return "redirect:/home";
+		return "redirect:/home";
 	}
 }
