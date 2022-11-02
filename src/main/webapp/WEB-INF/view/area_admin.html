@@ -1,30 +1,37 @@
 <!DOCTYPE html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area Admin</title>
     <link rel="stylesheet" href="/static/css/admin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="container">
         <header>
             <div class="row">
                 <div class="col-12">
-                    <img src="/static/img/770401.jpg" alt="" id="fotoHome"><!--mettere foto home-->
+                    <img src="/static/img/770401.jpg" alt="" id="fotoHome">
+                    <!--mettere foto home-->
                 </div>
             </div>
 
-            <div class="row" id="menu">     <!--Menu-->
+            <div class="row" id="menu">
+                <!--Menu-->
                 <div class="col-12" id="menu">
                     <nav th:replace="../template/template :: navFragment"></nav>
-              </div>
+                </div>
             </div>
-          </header>
-          <section>
+        </header>
+        <section>
             <div class="row">
                 <div class="col-4">
                     <img class="aside" src="/static/img/Venezia.jpg">
@@ -33,58 +40,65 @@
                     <img class="aside" src="/static/img/monaco.jpg">
                 </div>
                 <div class="col-4" id="centro">
-                <h3>Area Admin</h3>
-                <form action="GET">
-                    <p>Destinazione</p>
-                    <select name="destinazione">
-                        <option value="italia">Italia</option>
-                        <option value="europa">Europa</option>
-                        <option value="altro">Altro</option>
-                    </select>
-                <br/>
-                    <p>Titolo</p>
-                    <input type="text" placeholder="Titolo">
-                    <p>Descrizione</p>
-                    <input type="textarea" placeholder="Descrizione">
-                    <p>Gallery</p>
-                    <img src="#" class="imgCaricata" alt="immagine caricata">
-                    <img src="#" class="imgCaricata" alt="immagine caricata">
-                    <img src="#" class="imgCaricata" alt="immagine caricata">
+                    <h3>Area Admin</h3>
+                    <form action="GET">
+                        <p>Destinazione</p>
+                        <select name="destinazione">
+                            <option value="italia">Italia</option>
+                            <option value="europa">Europa</option>
+                            <option value="altro">Altro</option>
+                        </select>
+                        <br />
+                        <p>Titolo</p>
+                        <input type="text" placeholder="Titolo">
+                        <p>Descrizione</p>
+                        <input type="textarea" placeholder="Descrizione">
+                        <p>Gallery</p>
+                        <img src="/static/img/iconaimmagine.png" class="imgCaricata" alt="immagine caricata">
+                        <img src="/static/img/iconaimmagine.png" class="imgCaricata" alt="immagine caricata">
+                        <img src="/static/img/iconaimmagine.png" class="imgCaricata" alt="immagine caricata">
 
-                    <p>Pubblicazione</p>
-                    <p>Pubblicare</p><input type="checkbox" value="Pubblicare">
-                    <p>Non Pubblicare</p><input type="checkbox" value="Non Pubblicare">
-                    <br>
-                    <br>
-                    <table>
-                        <th>
-                            <tr><td>Lista viaggi</td></tr>
-                        </th>
-                        <tr></tr>
-                        <tr>
-                            <td></td><!--collegamento Spring-->
-                        </tr>
-                    </table>
+                        <p>Pubblicazione</p>
+                        Pubblicare <input type="checkbox" value="Pubblicare"> <br />
+                        Non Pubblicare <input type="checkbox" value="Non Pubblicare">
+                        <br>
+                        <br>
+                        <table>
+                            <th>
+                                <tr>
+                                    <td>Lista viaggi</td>
+                                </tr>
+                            </th>
+                            <tr></tr>
+                            <tr>
+                                <td></td>
+                                <!--collegamento Spring-->
+                            </tr>
+                        </table>
 
-                    <table>
-                        <th><tr>
-                            <td>Lista utenti registrati</td>
-                        </tr></th>
-                        <tr>
-                            <td></td><!--collegamento Spring-->
-                        </tr>
-                    </table>
+                        <table>
+                            <th>
+                                <tr>
+                                    <td>Lista utenti registrati</td>
+                                </tr>
+                            </th>
+                            <tr>
+                                <td></td>
+                                <!--collegamento Spring-->
+                            </tr>
+                        </table>
                 </div>
                 </form>
                 <div class="col-4">
-                    <img class="aside" src="/static/img/munchen.jpg">
-                    <img class="aside" src="/static/img/parigi.jpg">
-                    <img class="aside" src="/static/img/londra.jpg">
-                    <img class="aside" src="/static/img/zanzibar.jpg">
+                    <img class="asideD" src="/static/img/munchen.jpg">
+                    <img class="asideD" src="/static/img/parigi.jpg">
+                    <img class="asideD" src="/static/img/londra.jpg">
+                    <img class="asideD" src="/static/img/zanzibar.jpg">
                 </div>
             </div>
-          </section>
-          <footer th:replace="../template/template :: footerFragment"></footer>
+        </section>
+        <footer th:replace="../template/template :: footerFragment"></footer>
     </div>
 </body>
+
 </html>
