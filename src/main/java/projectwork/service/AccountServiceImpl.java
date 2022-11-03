@@ -29,6 +29,12 @@ public class AccountServiceImpl implements AccountService{
 	public List<Account> findAll() {
 		return (List<Account>) accountDao.findAll();
 	}
+
+	@Override
+	public void removeAccount(Account account) {
+		accountDao.delete(account);
+		
+	}
 	
 	
 }

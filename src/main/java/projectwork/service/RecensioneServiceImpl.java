@@ -19,4 +19,26 @@ public class RecensioneServiceImpl implements RecensioneService{
 		return recensioneDao.findByDestinazione(destinazione);
 	}
 
+	@Override
+	public void deleteRecensione(Recensione recensione) {
+		recensioneDao.delete(recensione);
+		
+	}
+
+	@Override
+	public void saveRecensione(Recensione recensione) {
+		recensioneDao.save(recensione);
+		
+	}
+
+	@Override
+	public List<Recensione> findAll() {
+		return (List<Recensione>) recensioneDao.findAll();
+	}
+
+	@Override
+	public List<Recensione> findByPubblicato(boolean pubblicato) {
+		return recensioneDao.findByPubblicato(pubblicato);
+	}
+
 }

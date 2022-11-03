@@ -9,4 +9,5 @@ public interface AccountService {
 	void saveAccount(Account account);
 	Account findByUsername(String username);
 	List<Account> findAll();
+	void removeAccount(Account account);
 } 

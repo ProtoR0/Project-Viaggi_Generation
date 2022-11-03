@@ -9,5 +9,7 @@ import projectwork.model.Recensione;
 public interface RecensioneDao extends CrudRepository<Recensione, Integer>{
 	
 	List<Recensione> findByDestinazione(String destinazione);
+	List<Recensione> findByPubblicato(boolean pubblicato);
+ 	List<Recensione> findByIdAccount(int id);
 	
 }
