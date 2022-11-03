@@ -1,11 +1,13 @@
 package projectwork.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import projectwork.dao.RecensioneDao;
+import projectwork.model.Account;
 import projectwork.model.Recensione;
 
 @Service
@@ -16,7 +18,15 @@ public class RecensioneServiceImpl implements RecensioneService{
 
 	@Override
 	public List<Recensione> findByDestinazione(String destinazione) {
-		return recensioneDao.findByDestinazione(destinazione);
+		List<Recensione> recensioni = new ArrayList<>();
+		List<Recensione> query = (List<Recensione>) recensioneDao.findAll();
+		
+		for (Recensione recensione : query) {
+			if(recensione.getDestinazione().equals(destinazione))
+				recensioni.add(recensione);
+		}
+		
+		return recensioni;
 	}
 
 	@Override
@@ -39,6 +49,11 @@ public class RecensioneServiceImpl implements RecensioneService{
 	@Override
 	public List<Recensione> findByPubblicato(boolean pubblicato) {
 		return recensioneDao.findByPubblicato(pubblicato);
+	}
+
+	@Override
+	public List<Recensione> findByAccount(Account account) {
+		return recensioneDao.findByAccount(account);
 	}
 
 }

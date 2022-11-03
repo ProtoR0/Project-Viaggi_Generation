@@ -36,7 +36,7 @@ public class Recensione implements Serializable{
 	@Column(name = "pubblicato", nullable = false)
 	private boolean pubblicato;
 	
-	@ManyToOne(cascade = CascadeType.REFRESH)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_account", referencedColumnName = "id")
 	private Account account;
 	
