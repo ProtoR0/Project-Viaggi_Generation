@@ -2,6 +2,7 @@ package projectwork.service;
 
 import java.util.List;
 
+import projectwork.model.Account;
 import projectwork.model.Recensione;
 
 public interface RecensioneService {

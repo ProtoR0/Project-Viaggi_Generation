@@ -1,11 +1,13 @@
 package projectwork.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import projectwork.dao.RecensioneDao;
+import projectwork.model.Account;
 import projectwork.model.Recensione;
 
 @Service
@@ -59,5 +61,4 @@ public class RecensioneServiceImpl implements RecensioneService{
 		return recensioni;
 		
 	}
-
 }
