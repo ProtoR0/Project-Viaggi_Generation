@@ -13,4 +13,5 @@ public interface RecensioneService {
 	void saveRecensione(Recensione recensione);
 	List<Recensione> findAll();
 	List<Recensione> findByAccount(Account account);
+	List<Recensione> findByAccountANDPubblicato(Account account);
 }

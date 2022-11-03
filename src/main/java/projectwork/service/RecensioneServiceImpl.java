@@ -56,4 +56,18 @@ public class RecensioneServiceImpl implements RecensioneService{
 		return recensioneDao.findByAccount(account);
 	}
 
+	@Override
+	public List<Recensione> findByAccountANDPubblicato(Account account) {
+		List<Recensione> recensioni = new ArrayList<>();
+		
+		for (Recensione recensione : recensioneDao.findByAccount(account)) {
+			if(recensione.isPubblicato() == false || recensione.isPubblicato()) {
+				recensioni.add(recensione);
+			}
+		}
+		
+		return recensioni;
+		
+	}
+
 }
