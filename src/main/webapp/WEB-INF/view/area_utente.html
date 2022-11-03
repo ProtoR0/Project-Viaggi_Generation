@@ -33,29 +33,26 @@
                 <aside class="col-2" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
                 <div class="col-5" id="centro">
                     <h3 th:text="'Ciao ' + ${nome}"></h3><!--inserire variabile nome utente-->
-                    <form action="GET">
+                    <form action="" method="GET">
                         <label>Destinazione
                             <select name="destinazione">
                                 <option value="italia">Italia</option>
                                 <option value="europa">Europa</option>
                                 <option value="altro">Altro</option>
                             </select></label>
-                        <br />
-                        <label>Titolo</label>
-                        <input type="text" placeholder="Titolo"><br />
-                        <label>Descrizione</label>
-                        <input type="textarea" placeholder="Descrizione"><br />
-                        <label>Gallery</label>
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
-                        <!--collegare foto caricare dall'utente-->
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
-                        <br />
-                        <input type="submit"/><!-- conferma invio pubblicazione -->
-                        <br>
-                        <br>
-		                </div>
-	                </form>
+                            <br />
+                            <label>Titolo</label>
+                            <input type="text" placeholder="Titolo"><br />
+                            <label>Descrizione</label>
+                            <textarea type="text" placeholder="Descrizione"></textarea><br />
+                            <label>Gallery</label>
+                            <input type="file">
+                            <br />
+                            <input type="submit"/><!-- conferma invio pubblicazione -->
+                            <br>
+                            <br>
+                    </div>
+                    </form>
                 <aside class="col-5">
                     <table>
                         <th>
