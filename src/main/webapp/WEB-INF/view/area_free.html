@@ -33,6 +33,7 @@
                 <aside class="col-4" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
                 <div class="col-4" id="centro">
                     <h3>Area Free</h3> 
+                    
                     <table>
                         <th>
                             <tr>
@@ -59,6 +60,40 @@
                 </div>
                 </form>
                 <aside class="col-4" th:replace="../template/template :: asideDestra"></aside>
+            </div>
+            <div class="row"><!--riga sotto il form-->
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/Maldive.jpg}" alt="maldive">
+                        <div class="card-body">
+                            <div class="card-title text-center">Maldive</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/marRosso.jpg}" alt="mar rosso">
+                        <div class="card-body">
+                            <div class="card-title text-center">Mar Rosso</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/dubai.jpeg}" alt="dubai">
+                        <div class="card-body">
+                            <div class="card-title text-center">Dubai</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/thailandia.jpeg}" alt="thailandia">
+                        <div class="card-body">
+                            <div class="card-title text-center">Thailandia</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
