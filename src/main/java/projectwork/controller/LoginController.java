@@ -25,21 +25,25 @@ public class LoginController {
 	}
 	
 	@PostMapping
-	public String login(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session) {
+	public String login(@RequestParam(name = "username", required = false) String username, @RequestParam(name = "password", required = false) String password, HttpSession session) {
 		
-		Account account = accountService.findByUsername(username);
 		
-		if(account != null) {
+		if(username != null && password != null) {
+			Account account = accountService.findByUsername(username);
 			
-			session.setAttribute("account", account);
-		
-			if(account.getPassword() != password) {
-				return "redirect:/login";
+			if(account != null) {
+				
+				System.out.println(account.getPassword());
+				
+				if(account.getPassword().equals(password)) {
+					session.setAttribute("account", account);
+					return "redirect:/area_utente";
+				}
 			}
-			if(account.isAdmin()) {
-				return "redirect:/area_admin";
-			}
+			return "redirect:/home";
 		}
-		return "home";
+		
+		return "redirect:/login";
+
 	}
 }

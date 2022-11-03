@@ -28,8 +28,9 @@ public class Account implements Serializable{
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\\\S+$).{8, 20}$", message = "error.password")
 	private String password;
 	
-	@Column(name = "admin")
-	private boolean admin;
+	@Column(name = "email", length = 255, nullable = false)
+	@Pattern(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$", message = "error.email")
+	private String email;
 
 	public int getId() {
 		return id;
@@ -55,12 +56,12 @@ public class Account implements Serializable{
 		this.password = password;
 	}
 
-	public boolean isAdmin() {
-		return admin;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +13,6 @@
         crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
 <body>
     <div class="container">
         <header>
@@ -30,41 +28,34 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-4"></aside><!--asideSinistra-->
-                <div class="col-4" id="centroAdmin">
+                <div class="col-6" id="centroAdmin">
                     <h3>Area Admin - Viaggi Utente - Lista utenti registrati</h3> 
                     <table>
                         <th>
+                            <!--collegamento Spring-->
+                        </tr>
+                    </table>
+                </div>
+                </form>
+                <div class="col-6">
+                    <table>
+                        <th>
                             <tr>
-                                <td>Lista utenti registrati</td>
+                                <td>Lista viaggi</td>
                             </tr>
                         </th>
+                        <tr></tr>
                         <tr>
                             <td></td>
                             <!--collegamento Spring-->
                         </tr>
-                    </table>
-                    <table>
-                            <th>
-                                <tr>
-                                    <td>Lista viaggi</td>
-                                </tr>
-                            </th>
-                            <tr></tr>
-                            <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
-                            </tr>
-                    </table>
-                    <a href="/WEB-INF/view/area_admin.html"></a>
+                </table>
                 </div>
-                </form>
-                <aside class="col-4"></aside>
+                <a href="/WEB-INF/view/area_admin.html">Recensioni da pubblicare</a>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
         <script th:src="@{/static/javascript/index.js}"></script>
     </div>
 </body>
-
 </html>

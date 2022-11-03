@@ -25,18 +25,14 @@ public class AAdminController {
 	@GetMapping
 	public String getPage(HttpSession session, Model model) {
 		
-		if(session.getAttribute("account") != null) {
-		 Account account = (Account) session.getAttribute("acccount");
-		
-			if(account.isAdmin()) {
-				
-				model.addAttribute("Utenti", accountService.findAll());
-				model.addAttribute("Recensioni", recensioneService.findByPubblicato(true));
-				boolean lavoro = recensioneService.findByPubblicato(false) != null ? true : false;
-				model.addAttribute("RecensioniDaVerificare", lavoro);
-				
-				return "area_admin";
-			}
+		if(session.getAttribute("admin") != null) {
+	
+			model.addAttribute("Utenti", accountService.findAll());
+			model.addAttribute("Recensioni", recensioneService.findByPubblicato(true));
+			boolean lavoro = recensioneService.findByPubblicato(false) != null ? true : false;
+			model.addAttribute("RecensioniDaVerificare", lavoro);
+			
+			return "area_admin";
 		}
 		
 		return "redirect:/home";

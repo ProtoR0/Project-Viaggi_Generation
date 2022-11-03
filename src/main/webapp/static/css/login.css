@@ -1,21 +1,17 @@
 #fotoHome{
     width: 100%;
 }
-
 .aside {
     width: 300px;
     height: auto;
     margin: 20px;
 }
-
 #centro {
     margin-top: 20px;
 }
-
 #centroAdmin{
     margin-bottom: 200px;
 }
-
 .imgCaricata {
     width: 50px;
 }
@@ -24,19 +20,14 @@
     color: white;
     padding: 20px;
 }
-
 section{
     text-align: center;
 }
-
 input{
     margin: 2px;
+    border-radius: 2px;
 }
-
 form {
     text-align: left;
-}
-
-textarea{
-    resize: none;
+    margin-bottom: 200px;
 }

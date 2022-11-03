@@ -30,8 +30,8 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-4" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
-                <div class="col-4" id="centro">
+                <aside class="col-2" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
+                <div class="col-5" id="centro">
                     <h3 th:text="'Ciao ' + ${nome}"></h3><!--inserire variabile nome utente-->
                     <form action="GET">
                         <label>Destinazione
@@ -54,26 +54,26 @@
                         <input type="submit"/><!-- conferma invio pubblicazione -->
                         <br>
                         <br>
-                        <table>
-                            <th>
-                                <tr>
-                                    <td>Lista viaggi</td>
-                                </tr>
-                            </th>
-                            <tr></tr>
+		                </div>
+	                </form>
+                <aside class="col-5">
+                    <table>
+                        <th>
                             <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
+                                <td>Lista viaggi</td>
                             </tr>
-                        </table>
-                </div>
-                </form>
-                <aside class="col-4" th:replace="../template/template :: asideDestra"></aside>
+                        </th>
+                        <tr></tr>
+                        <tr>
+                            <td></td>
+                            <!--collegamento Spring-->
+                        </tr>
+                    </table>
+                </aside>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
         <script th:src="@{/static/javascript/index.js}"></script>
     </div>
 </body>
-
 </html>

@@ -29,7 +29,7 @@ public class AUtenteController {
 			model.addAttribute("recensioni", recensioneService.findByAccountANDPubblicato(account));
 			model.addAttribute("nome", account.getUsername());
 			
-			
+			return "area_utente";
 		}
 		return "redirect:/login";
 	}
