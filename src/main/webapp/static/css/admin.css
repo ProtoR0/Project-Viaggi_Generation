@@ -1,3 +1,10 @@
+.container{
+    box-shadow: 5px 5px 5px #dedede,
+                -10px -10px 5px #dedede,
+                5px -10px 5px #dedede,
+                -10px 5px 5px #dedede;
+}
+
 #fotoHome{
     width: 100%;
 }

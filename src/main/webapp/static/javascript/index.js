@@ -1,35 +1,10 @@
 $(document).ready(function(){
 
-    $(".nav-link").on({
+   
 
-        mouseenter: function(){
-            $(this).css("background-color","#9C9C9C");
-        },
+    $(".aside").hover(function(){
 
-        mouseleave: function(){
-            $(this).css("background-color", ""); //prendere colore navbar
-        }
-    });
-
-    
-    $(".aside").on({
-
-        mouseenter:function(){
-            $(this).animate({
-                right:"400px",
-                height:"auto",
-                width: "400px"
-            });
-        },
-
-        mouseleave:function(){
-            $(this).animate({
-                width:"300px",
-                height:"auto",
-            });
-        }
-
-        
+        $(this).css("width","350px")
     });
 
 

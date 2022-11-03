@@ -12,51 +12,46 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="row">
-                <div class="col-12">
-                    <img th:src="@{/static/img/770401.jpg}" alt="" id="fotoHome">
-                </div>
-            </div>
-            <div class="row" id="menu">
-                <!--Menu-->
-                <div class="col-12" id="menu">
-                    <nav th:replace="../template/template :: navFragment"></nav>
-                </div>
+                <div class="col-12" th:replace="../template/template :: header"></div>
             </div>
         </header>
+        <div class="row" id="menu">
+            <!--Menu-->
+            <div class="col-12" id="menu">
+                <nav th:replace="../template/template :: navFragment"></nav>
+            </div>
+        </div>
         <section>
             <div class="row">
-                <div class="col-4">
-                    <img class="aside" th:src="@{/static/img/Venezia.jpg}">
-                    <img class="aside" th:src="@{/static/img/roma.jpg}">
-                    <img class="aside" th:src="@{/static/img/milano.jpg}">
-                    <img class="aside" th:src="@{/static/img/monaco.jpg}">
-                </div>
+                <aside class="col-4" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
                 <div class="col-4" id="centro">
                     <h3>Area Admin</h3>
                     <form action="GET">
                         <label>Destinazione
-                        <select name="destinazione">
-                            <option value="italia">Italia</option>
-                            <option value="europa">Europa</option>
-                            <option value="altro">Altro</option>
-                        </select></label>
+                            <select name="destinazione">
+                                <option value="italia">Italia</option>
+                                <option value="europa">Europa</option>
+                                <option value="altro">Altro</option>
+                            </select></label>
                         <br />
                         <label>Titolo</label>
-                        <input type="text" placeholder="Titolo"><br/>
+                        <input type="text" placeholder="Titolo"><br />
                         <label>Descrizione</label>
-                        <input type="textarea" placeholder="Descrizione"><br/>
+                        <input type="textarea" placeholder="Descrizione"><br />
                         <label>Gallery</label>
                         <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata"> <!--collegare foto caricare dall'utente-->
+                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
+                        <!--collegare foto caricare dall'utente-->
                         <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
 
-                        <br/>
+                        <br />
                         <label>Pubblicare</label> <input type="checkbox" value="Pubblicare"> <br />
                         <label>Non Pubblicare</label> <input type="checkbox" value="Non Pubblicare">
                         <br>
@@ -87,12 +82,7 @@
                         </table>
                 </div>
                 </form>
-                <div class="col-4">
-                    <img class="aside" th:src="@{/static/img/munchen.jpg}">
-                    <img class="aside" th:src="@{/static/img/parigi.jpg}">
-                    <img class="aside" th:src="@{/static/img/londra.jpg}">
-                    <img class="aside" th:src="@{/static/img/zanzibar.jpg}">
-                </div>
+                <aside class="col-4" th:replace="../template/template :: asideDestra"></aside>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
