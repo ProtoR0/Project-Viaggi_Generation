@@ -30,8 +30,7 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-4"></aside><!--asideSinistra-->
-                <div class="col-4" id="centroAdmin">
+                <div class="col-6" id="centroAdmin">
                     <h3>Area Admin - Viaggi Utente - Lista utenti registrati</h3> 
                     <table>
                         <th>
@@ -44,22 +43,23 @@
                             <!--collegamento Spring-->
                         </tr>
                     </table>
-                    <table>
-                            <th>
-                                <tr>
-                                    <td>Lista viaggi</td>
-                                </tr>
-                            </th>
-                            <tr></tr>
-                            <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
-                            </tr>
-                    </table>
-                    <a href="/WEB-INF/view/area_admin.html"></a>
                 </div>
                 </form>
-                <aside class="col-4"></aside>
+                <div class="col-6">
+                    <table>
+                        <th>
+                            <tr>
+                                <td>Lista viaggi</td>
+                            </tr>
+                        </th>
+                        <tr></tr>
+                        <tr>
+                            <td></td>
+                            <!--collegamento Spring-->
+                        </tr>
+                </table>
+                </div>
+                <a href="/WEB-INF/view/area_admin.html">Recensioni da pubblicare</a>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
