@@ -32,31 +32,30 @@
             <div class="row">
                 <aside class="col-4"></aside><!--asideSinistra-->
                 <div class="col-4" id="centroAdmin">
-                    <h3>Area Admin - Viaggi Utente - Lista utenti registrati</h3> 
-                    <table>
-                        <th>
-                            <tr>
-                                <td>Lista utenti registrati</td>
-                            </tr>
-                        </th>
-                        <tr>
-                            <td></td>
-                            <!--collegamento Spring-->
-                        </tr>
-                    </table>
-                    <table>
-                            <th>
-                                <tr>
-                                    <td>Lista viaggi</td>
-                                </tr>
-                            </th>
-                            <tr></tr>
-                            <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
-                            </tr>
-                    </table>
-                    <a href="/WEB-INF/view/area_admin.html"></a>
+                    <h3>Area Admin</h3>
+                    <form action="GET">
+                        <label>Destinazione
+                            <select name="destinazione">
+                                <option value="italia">Italia</option>
+                                <option value="europa">Europa</option>
+                                <option value="altro">Altro</option>
+                            </select></label>
+                        <br />
+                        <label>Titolo</label>
+                        <input type="text" placeholder="Titolo"><br />
+                        <label>Descrizione</label>
+                        <input type="textarea" placeholder="Descrizione"><br />
+                        <label>Gallery</label>
+                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
+                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
+                        <!--collegare foto caricare dall'utente-->
+                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
+                        <br />
+                        <label>Pubblicare</label> <input type="checkbox" value="Pubblicare"> <br />
+                        <label>Non Pubblicare</label> <input type="checkbox" value="Non Pubblicare"><br/>
+                        <input type="submit"/><!-- conferma invio pubblicazione -->
+                        <br>
+                        <br>
                 </div>
                 </form>
                 <aside class="col-4"></aside>
