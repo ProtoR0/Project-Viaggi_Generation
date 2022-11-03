@@ -3,12 +3,10 @@ package projectwork.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import projectwork.dao.AdminDao;
 import projectwork.model.Admin;
 
-@Service
 public class AdminServiceImpl implements AdminService {
 
 	@Autowired

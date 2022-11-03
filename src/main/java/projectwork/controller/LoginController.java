@@ -36,6 +36,9 @@ public class LoginController {
 			if(account.getPassword() != password) {
 				return "redirect:/login";
 			}
+			if(account.isAdmin()) {
+				return "redirect:/area_admin";
+			}
 		}
 		return "home";
 	}

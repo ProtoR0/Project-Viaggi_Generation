@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Area Admin</title>
     <link rel="stylesheet" th:href="@{/static/css/area_free.css}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -32,6 +32,7 @@
             <div class="row">
                 <aside class="col-4" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
                 <div class="col-4" id="centro">
+                    <h3>Area Free</h3> 
                     <table>
                         <th>
                             <tr>
@@ -43,20 +44,49 @@
                             <!--collegamento Spring-->
                         </tr>
                     </table>
-                    <table>
-                        <th>
-                            <tr>
-                                <td>Dettaglio recensione</td><td>Durata del viaggio</td><td>Immagini</td>
-                            </tr>
-                        </th>
-                        <tr></tr>
-                        <tr>
-                            <td></td>
-                            <!--collegamento Spring-->
-                        </tr>
-                </table>
+                    <div class="card">
+                        <img class="card-img-top" src="" alt=""><!--inserire immagine avuta dalla ricerca recensioni-->
+                        <div class="card-body">
+                            <div class="card-title text-center"></div><!--inserire titolo recensione-->
+                            <div class="card--text-justify"></div> <!--inserire testo descrizione-->
+                        </div>
+                    </div>
                 </div>
                 <aside class="col-4" th:replace="../template/template :: asideDestra"></aside>
+            </div>
+            <div class="row"><!--riga sotto il form-->
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/Maldive.jpg}" alt="maldive">
+                        <div class="card-body">
+                            <div class="card-title text-center">Maldive</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/marRosso.jpg}" alt="mar rosso">
+                        <div class="card-body">
+                            <div class="card-title text-center">Mar Rosso</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/dubai.jpeg}" alt="dubai">
+                        <div class="card-body">
+                            <div class="card-title text-center">Dubai</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{/static/img/img_free/thailandia.jpeg}" alt="thailandia">
+                        <div class="card-body">
+                            <div class="card-title text-center">Thailandia</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>

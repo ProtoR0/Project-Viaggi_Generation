@@ -2,7 +2,6 @@ package projectwork.service;
 
 import java.util.List;
 
-import projectwork.model.Account;
 import projectwork.model.Recensione;
 
 public interface RecensioneService {
@@ -12,5 +11,4 @@ public interface RecensioneService {
 	void deleteRecensione(Recensione recensione);
 	void saveRecensione(Recensione recensione);
 	List<Recensione> findAll();
-	List<Recensione> findByAccount(Account account);
 }
