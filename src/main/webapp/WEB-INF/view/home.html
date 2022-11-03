@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Admin</title>
+    <link rel="stylesheet" th:href="@{/static/css/area_utente.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-12" th:replace="../template/template :: header"></div>
+            </div>
+        </header>
+        <div class="row" id="menu">
+            <!--Menu-->
+            <div class="col-12" id="menu">
+                <nav th:replace="../template/template :: navFragment"></nav>
+            </div>
+        </div>
+        <section>
+            <div class="row"><!--inserire card-->
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/bravoCayoLargo.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Bravo Cayo Largo</div>
+                            <div class="card-text-justify">10 Dic 22 >> 17 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/AlpiclubCorralejoVillage.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Alpi Club Largo</div>
+                            <div class="card-text-justify">19 Dic 22 >> 26 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/SolLanzarote.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Sol Lanzarote</div>
+                            <div class="card-text-justify">19 Dic 22 >> 26 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/Tabaiba.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Tabaiba</div>
+                            <div class="card-text-justify">10 Dic 22 >> 17 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"><!--inserire card seconda riga-->
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/WatamuBeach.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Watamu Beach</div>
+                            <div class="card-text-justify">14 Dic 22 >> 22 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/Dominicus_beach.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Dominicus Beach</div>
+                            <div class="card-text-justify">18 Dic 22 >> 25 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/Jacaranda.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Jacaranda</div>
+                            <div class="card-text-justify">19 Dic 22 >> 26 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/Zanzibar2.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Zanzibar</div>
+                            <div class="card-text-justify">19 Dic 22 >> 27 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"><!--inserire card terza riga-->
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/WatamuBeach.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/Dominicus_beach.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Dominicus Beach</div>
+                            <div class="card-text-justify">18 Dic 22 >> 25 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/Jacaranda.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Jacaranda</div>
+                            <div class="card-text-justify">19 Dic 22 >> 26 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="/static/img/home/Zanzibar2.jpg" alt="">
+                        <div class="card-body">
+                            <div class="card-title">Zanzibar</div>
+                            <div class="card-text-justify">19 Dic 22 >> 27 Dic 22 (7 Notti)</div><br/><br/>
+                            <div class="btn btn-primary">Seleziona</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer th:replace="../template/template :: footerFragment"></footer>
+        <script th:src="@{/static/javascript/index.js}"></script>
+    </div>
+</body>
+
+</html>
