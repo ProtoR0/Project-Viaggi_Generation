@@ -32,16 +32,16 @@
             <div class="row">
                 <aside class="col-4"></aside><!--asideSinistra-->
                 <div class="col-4" id="centro">                 
-                    <form action="login" method="POST" ><!--login-->
+                    <form action="login" method="POST" autocomplete="on"><!--login-->
                         <h3>Login</h3>
                         <hr>
                         <label for="username" th:text="#{label.username} + ':'"></label><br>
-                        <input id="username" name= "username" type="text"><br/>
+                        <input id="username" name= "username" type="text" autocomplete="off"><br/>
                         <p th:if="${usernameError}" th:text="#{error.usernameErrato}" class="text-danger"></p>
                         <br/>
                         
                         <label for="password" th:text="#{label.password} + ':'"></label><br>
-                        <input id="password" name="password" type="password"><br/>
+                        <input id="password" name="password" type="password" autocomplete="off"><br/>
                         <p th:if="${passwordError}" th:text="#{error.passwordErrata}" class="text-danger"></p>
                         <br/>
                         
