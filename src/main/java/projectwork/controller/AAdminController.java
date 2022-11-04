@@ -26,8 +26,8 @@ public class AAdminController {
 		if(session.getAttribute("admin") != null) {
 	
 			model.addAttribute("Utenti", accountService.findAll());
-			model.addAttribute("Recensioni", recensioneService.findByPubblicato(true));
-			boolean lavoro = recensioneService.findByPubblicato(false) != null ? true : false;
+			model.addAttribute("Recensioni", recensioneService.findByPubblicato(0));
+			boolean lavoro = recensioneService.findByPubblicato(0) != null ? true : false;
 			model.addAttribute("RecensioniDaVerificare", lavoro);
 			
 			return "area_admin";

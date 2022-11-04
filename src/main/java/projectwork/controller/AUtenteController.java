@@ -26,7 +26,7 @@ public class AUtenteController {
 			
 			Account account = (Account) session.getAttribute("account");
 			
-			model.addAttribute("recensioni", recensioneService.findByAccountANDPubblicato(account));
+			model.addAttribute("recensioni", recensioneService.findByAccountANDPubblicato(account, 1));
 			model.addAttribute("nome", account.getUsername());
 			
 			return "area_utente";

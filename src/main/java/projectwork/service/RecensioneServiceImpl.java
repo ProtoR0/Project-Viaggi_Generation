@@ -39,7 +39,7 @@ public class RecensioneServiceImpl implements RecensioneService{
 	}
 
 	@Override
-	public List<Recensione> findByPubblicato(boolean pubblicato) {
+	public List<Recensione> findByPubblicato(int pubblicato) {
 		return recensioneDao.findByPubblicato(pubblicato);
 	}
 
@@ -49,16 +49,35 @@ public class RecensioneServiceImpl implements RecensioneService{
 	}
 
 	@Override
-	public List<Recensione> findByAccountANDPubblicato(Account account) {
+	public List<Recensione> findByAccountANDPubblicato(Account account, int pubblicato) {
 		List<Recensione> recensioni = new ArrayList<>();
 		
 		for (Recensione recensione : recensioneDao.findByAccount(account)) {
-			if(recensione.isPubblicato() == false || recensione.isPubblicato()) {
+			if(recensione.getPubblicato() == pubblicato) {
 				recensioni.add(recensione);
 			}
 		}
 		
 		return recensioni;
 		
+	}
+
+	@Override
+	public Recensione findRecensioneInListById(List<Recensione> lista, int id) {
+		Recensione recensione = null;
+		
+		for (Recensione r: lista) {
+			if(r.getId() == id) {
+				recensione = r;
+				break;
+			}		
+	}
+		return recensione;
+
+	}
+
+	@Override
+	public Recensione findById(int id) {
+		return recensioneDao.findById(id).get();
 	}
 }

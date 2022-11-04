@@ -8,10 +8,12 @@ import projectwork.model.Recensione;
 public interface RecensioneService {
 	
 	List<Recensione> findByDestinazione(String destinazione);
-	List<Recensione> findByPubblicato(boolean pubblicato);
+	List<Recensione> findByPubblicato(int pubblicato);
 	void deleteRecensione(Recensione recensione);
 	void saveRecensione(Recensione recensione);
 	List<Recensione> findAll();
 	List<Recensione> findByAccount(Account account);
-	List<Recensione> findByAccountANDPubblicato(Account account);
+	List<Recensione> findByAccountANDPubblicato(Account account, int pubblicato);
+	Recensione findRecensioneInListById(List<Recensione> lista, int id);
+	Recensione findById(int id);
 }

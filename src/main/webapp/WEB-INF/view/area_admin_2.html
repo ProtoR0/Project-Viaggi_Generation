@@ -30,40 +30,56 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-4"></aside><!--asideSinistra-->
-                <div class="col-4" id="centroAdmin">
-                    <h3>Area Admin</h3>
-                    <form action="" method="GET">
-                        <label>Destinazione</label>
-                            <select name="destinazione">
-                                <option value="italia">Italia</option>
-                                <option value="europa">Europa</option>
-                                <option value="altro">Altro</option>
-                            </select>
-                        <br />
-                        <label>Titolo</label>
-                        <input type="text" placeholder="Titolo"><br />
-                        <label>Descrizione</label>
-                        <input type="textarea" placeholder="Descrizione"><br />
-                        <label>Gallery</label>
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata"><!--collegare foto caricare dall'utente-->
-                        <img th:src="@{/static/img/iconaimmagine.png}" class="imgCaricata" alt="immagine caricata">
-                        <br />
+                <aside class="col-4 text-start">
+	                <h3>Area Admin</h3>
+	                    
+                    <p><Strong>Titolo:</Strong> </p> <span th:text="${recensione.titolo}"></span>
+                    
+                    <p><Strong>Destinazione:</Strong> </p> <span th:text="${recensione.destinazione}"></span>
+                    
+                    <p><Strong>Descrizione</Strong> </p><br/>
+                    
+                    <p th:text="${recensione.descrizione}"></p>
+                    
+                    <!--  Aggiungere parte foto -->
+                    <form method="GET" action="area_admin2/cambioStato?id=${recensione.id}">
                         
-                        <label for="checkbox">Stato</label>
+                        <label for="checkbox">Pubblicare: </label><br/>
                         <input type="radio" id="pubblicare" name="pubblicare" value="Pubblicare" required>
-                        <label for="pubblicare">Pubblicare</label><br>
+                        <label for="pubblicare">Si</label><br>
                         <input type="radio" id="Non pubblicare" name="pubblicare" value="Non pubblicare" required>
-                        <label for="Non pubblicare">Non pubblicare</label><br>
-					    
-					    
-                        <input type="submit"/><!-- conferma invio pubblicazione -->
+                        <label for="Non pubblicare">No</label><br>
+				
+                        <input type="submit" class="btn btn-primary"/><!-- conferma invio pubblicazione -->
                         <br>
                         <br>
-                </form>
-            </div>
-                <aside class="col-4"></aside>
+                	</form>
+                </aside><!--asideSinistra-->
+                <div class="col-4" id="centroAdmin">
+                    <table class="table table-striped table-responsive">
+						<thead>
+							<tr>
+								<th th:text="#{label.titolo}"></th>
+								<th th:text="#{label.destinazione}"></th>
+								<th th:text="#{label.username}"></th>
+								<th th:text="#{label.durata}"></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="r : ${recensioni}">
+								<td th:text="${r.titolo}"></td>
+								<td th:text="${r.destinazione}"></td>
+								<td th:text="${r.account.username}"></td>
+								<td th:text="${r.durata}"></td>
+								<td class="text-end">
+									<a th:href="@{/area_admin2(id=${o.id})}" class="btn btn-primary btn-sm small-button" 
+										th:text="#{btn.edit}"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+            	</div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>

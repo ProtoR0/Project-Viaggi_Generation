@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -33,8 +34,8 @@ public class Recensione implements Serializable{
 	@Column(name = "descrizione", length = 4048, nullable = false)
 	private String descrizione;
 	
-	@Column(name = "pubblicato", nullable = false)
-	private boolean pubblicato;
+	@Column(name = "pubblicato", length = 1, nullable = false)
+	private int pubblicato;
 	
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "id_account", referencedColumnName = "id")
@@ -45,6 +46,9 @@ public class Recensione implements Serializable{
 	
 	@Column(name = "data_fine", nullable = false)
 	private LocalDate dataFine;
+	
+	@Transient
+	private LocalDate durata;
 
 	public int getId() {
 		return id;
@@ -78,11 +82,11 @@ public class Recensione implements Serializable{
 		this.destinazione = destinazione;
 	}
 
-	public boolean isPubblicato() {
+	public int getPubblicato() {
 		return pubblicato;
 	}
 
-	public void setPubblicato(boolean pubblicato) {
+	public void setPubblicato(int pubblicato) {
 		this.pubblicato = pubblicato;
 	}
 
@@ -108,6 +112,14 @@ public class Recensione implements Serializable{
 
 	public void setDataFine(LocalDate dataFine) {
 		this.dataFine = dataFine;
+	}
+
+	public LocalDate getDurata() {
+		return durata;
+	}
+
+	public void setDurata(LocalDate durata) {
+		this.durata = durata;
 	}
 	
 }
