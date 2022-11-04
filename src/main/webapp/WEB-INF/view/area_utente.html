@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container p-0">
+    <div class="container-fluid">
         <header>
             <div class="row">
                 <div class="col-12" th:replace="../template/template :: header"></div>
@@ -30,7 +30,8 @@
         </div>
         <section>
             <div class="row" id="centro">
-                <div class="col-5">
+            	<div class="col-1"></div>
+                <div class="col-4">
                     <h3 th:text="'Ciao ' + ${nome}"></h3><!--inserire variabile nome utente-->
                     <h5>Inserisci la tua recensione</h5>
                     <form action="" method="GET">
@@ -55,7 +56,8 @@
                     <img class="aside" th:src="@{/static/img/milano.jpg}"><br/>
                     <img class="aside" th:src="@{/static/img/monaco.jpg}">
                 </div>
-                <div class="col-7">
+                <div class="col-1"></div>
+                <div class="col-5">
                 	<h5>Lista dei viaggi</h5>
                     <table>
                         <th>
@@ -65,6 +67,7 @@
                         </th>
                     </table>
                 </div>
+                <div class="col-1"></div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
