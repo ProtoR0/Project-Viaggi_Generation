@@ -21,15 +21,26 @@ public class Account implements Serializable{
 	private int id;
 	
 	@Column(name = "username", length = 30, nullable = false)
-	@Pattern(regexp = "[a-zA-Z0-9]{3,15}", message = "error.username")
+	@Pattern(regexp = "[a-zA-Z0-9]{3,15}", message = "{error.username}")
 	private String username;
 	
 	@Column(name = "password", length = 20, nullable = false)
-	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\\\S+$).{8, 20}$", message = "error.password")
+	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,20}$", message = "{error.password}")
+	/*
+	 * 
+		^				  # start-of-string
+		(?=.*[0-9])       # a digit must occur at least once
+		(?=.*[a-z])       # a lower case letter must occur at least once
+		(?=.*[A-Z])       # an upper case letter must occur at least once
+		(?=.*[@#$%^&+=])  # a special character must occur at least once
+		(?=\S+$)          # no whitespace allowed in the entire string
+		.{8,20}           # at least eight places or less than 20
+		$                 # end-of-string
+	*/
 	private String password;
 	
 	@Column(name = "email", length = 255, nullable = false)
-	@Pattern(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$", message = "error.email")
+	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", message = "{error.email}")
 	private String email;
 
 	public int getId() {

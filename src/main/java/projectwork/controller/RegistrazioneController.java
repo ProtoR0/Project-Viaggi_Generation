@@ -6,8 +6,8 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,30 +17,31 @@ import projectwork.model.Account;
 import projectwork.service.AccountService;
 
 @Controller
-@RequestMapping("/register")
-public class RegisterController {
+@RequestMapping("/registrazione")
+public class RegistrazioneController {
 	
 	@Autowired
 	private AccountService accountService;
 	
 	@GetMapping
-	public String getPage() {
-		return "register";
+	public String getPage(Model model) {
+		model.addAttribute("account", new Account());
+		return "registrazione";
 	}
 	
 	@PostMapping
-	public String register(@Valid @ModelAttribute("account") Account account, BindingResult result) {
+	public String register(@Valid @ModelAttribute("account") Account account, BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {
-			return "register";
+			return "registrazione";
 		}
 		
 		List<Account> accounts = accountService.findAll();
 		
 		for (Account a : accounts) {
 			if(a.getUsername().equals(account.getUsername())) {
-				result.addError(new FieldError("account", "username", "Username giá esistente"));
-				return "register";
+				model.addAttribute("usernameTaken", true);
+				return "registrazione";
 			}
 		}
 		

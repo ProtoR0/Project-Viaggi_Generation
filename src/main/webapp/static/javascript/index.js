@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
    
-    $(".aside").hover(function(){
+ //   $(".aside").hover(function(){
 /*     $(".aside").hover(function(){
 
         $(this).css("width","350px")
@@ -16,5 +16,4 @@ $(document).ready(function(){
         });
 
 
-})
 });
