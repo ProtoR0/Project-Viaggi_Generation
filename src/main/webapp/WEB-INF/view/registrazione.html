@@ -28,8 +28,8 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-4"></aside><!--asideSinistra-->
-                <div class="col-4" id="centro">                 
+                <aside class="col-3"></aside><!--asideSinistra-->
+                <div class="col-6" id="centro">                 
                     <form method="POST" th:object="${account}"><!--registrazione-->
                         <h3>Registrazione</h3>
                         <hr>
@@ -46,11 +46,11 @@
                         <input type="text" id="email" th:field="*{email}" required="required" class="form-control"><br/>
                         <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></p>
                         
-                        <input type="Submit" class="btn btn-primary small-button" th:value="#{btn.register}">
+                        <input id="btn" type="Submit" class="btn btn-primary small-button" th:value="#{btn.register}">
                     </form>
                     <br>
                 </div>
-                <aside class="col-4"></aside>
+                <aside class="col-3"></aside>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
