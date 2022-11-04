@@ -11,14 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import projectwork.model.Account;
-import projectwork.service.AccountServiceImpl;
+import projectwork.model.Admin;
+import projectwork.service.AccountService;
+import projectwork.service.AdminService;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 	
 	@Autowired
-	private AccountServiceImpl accountService;
+	private AccountService accountService;
+	
+	@Autowired
+	private AdminService adminService;
 
 	@GetMapping
 	public String getPage() {
@@ -26,25 +31,41 @@ public class LoginController {
 	}
 	
 	@PostMapping
-	public String login(@RequestParam(name = "username", required = false) String username, @RequestParam(name = "password", required = false) String password, HttpSession session, Model model) {
+	public String login(@RequestParam(name = "username", required = false) String username, @RequestParam(name = "password", required = false) String password,@RequestParam("tipo") String type, HttpSession session, Model model) {
 		
 		
 		if(username != null && password != null) {
-			Account account = accountService.findByUsername(username);
+			if(type.equals("Normale")) {										// Login per account normale
 			
-			if(account != null) {
+				Account account = accountService.findByUsername(username);
 				
-				if(account.getPassword().equals(password)) {
-					session.setAttribute("account", account);
-					return "redirect:/area_utente";
+				if(account != null) {
+					
+					if(account.getPassword().equals(password)) {
+						session.setAttribute("account", account);
+						return "redirect:/area_utente";
+					}
+					model.addAttribute("passwordError", true);
+				}else {
+					model.addAttribute("usernameError", true);	
+				}	
+			}else if(type.equals("Admin")) {									// Login per account admin
+				Admin admin = adminService.findByUsername(username);
+				
+				if(admin != null) {
+					
+					if(admin.getPassword().equals(password)) {
+						session.setAttribute("admin", admin);
+						return "redirect:/area_admin";
+					}
+					model.addAttribute("passwordError", true);
+				}else {
+					model.addAttribute("usernameError", true);	
+				}	
+					
 				}
-				model.addAttribute("passwordError", true);
-			}else {
-				model.addAttribute("usernameError", true);	
-			}
-
 			return "login";
-		}
+			}
 		
 		return "redirect:/login";
 
