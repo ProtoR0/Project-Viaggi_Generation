@@ -14,7 +14,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container p-0">
         <header>
             <div class="row">
                 <div class="col-12" th:replace="../template/template :: header"></div>
@@ -28,8 +28,8 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-3"></aside><!--asideSinistra-->
-                <div class="col-6" id="centro">                 
+                <aside class="col-4"></aside><!--asideSinistra-->
+                <div class="col-4" id="centro">                 
                     <form method="POST" th:object="${account}"><!--registrazione-->
                         <h3>Registrazione</h3>
                         <hr>
@@ -50,7 +50,7 @@
                     </form>
                     <br>
                 </div>
-                <aside class="col-3"></aside>
+                <aside class="col-4"></aside>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
