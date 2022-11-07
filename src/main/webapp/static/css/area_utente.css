@@ -51,3 +51,6 @@ textarea{
 .container{
     background-color: rgb(211, 211, 211);
 }
+#foto{
+	width: 300px;
+}

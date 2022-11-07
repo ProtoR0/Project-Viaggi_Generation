@@ -35,7 +35,7 @@
                     <h3 th:text="'Ciao ' + ${nome}"></h3><!--inserire variabile nome utente-->
                     <div th:if="${!inserisciFoto}">
 	                    <h5>Inserisci la tua recensione</h5>
-	                    <form action="" method="GET">
+	                    <form method="POST">
 	                        <label class="form-label">Destinazione
 	                            <select name="destinazione">
 	                                <option value="italia">Italia</option>
@@ -52,7 +52,7 @@
 	                            <label class="form-label">Descrizione</label>
 	                            <textarea placeholder="Descrizione" class="form-control" column="20" rows="15"></textarea><br/>
 	                            <br />
-	                            <input id="btn" type="submit" class="btn btn-primary" th:value="#{btn.inserisciFoto}"/><!-- conferma invio pubblicazione -->
+	                            <input type="submit" id="foto" class="btn btn-primary" th:value="#{btn.inserisciFoto}"/><!-- conferma invio pubblicazione -->
 	                            <br>
 	                            <br>
 	                    </form>
