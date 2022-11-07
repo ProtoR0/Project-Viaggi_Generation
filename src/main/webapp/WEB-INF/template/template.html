@@ -16,7 +16,7 @@
 <body>
   <!--header-->
   <div class="col-12" th:fragment="header">
-    <img th:src="@{/static/img/aereo.jpg}" class="img-fluid" alt="" id="fotoHome">
+    <img th:src="@{/static/img/aereoM.jpg}" class="img-fluid" alt="" id="fotoHome">
   </div>
   <!--fine header-->
   <!--aside sinistra-->
@@ -104,9 +104,9 @@
       </div>
       <div class="col-4">
         <h5>Lingue</h5>
-        <p>Inglese</p>
-        <p>Italiano</p>
-        <p>Spagnolo</p>
+        <a th:href="@{/WEB-INF/view/lavorazione.html}" target="_blank">Inglese</a><br/>
+        <a th:href="@{/WEB-INF/view/lavorazione.html}" target="_blank">Italiano</a><br/>
+        <a th:href="@{/WEB-INF/view/lavorazione.html}" target="_blank">Spagnolo</a><br/>
       </div>
     </div>
   </footer>
