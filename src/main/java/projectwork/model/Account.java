@@ -21,7 +21,7 @@ public class Account implements Serializable{
 	private int id;
 	
 	@Column(name = "username", length = 30, nullable = false)
-	@Pattern(regexp = "[a-zA-Z0-9]{3,15}", message = "{error.username}")
+	@Pattern(regexp = "[a-zA-Z0-9]{3,30}", message = "{error.username}")
 	private String username;
 	
 	@Column(name = "password", length = 20, nullable = false)
