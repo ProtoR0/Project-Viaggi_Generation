@@ -83,7 +83,7 @@
   <!--Fine nav bar-->
   <!--aside Destra-->
   <aside class="col-4" th:fragment="asideDestra">
-    <img class="aside" th:src="@{/static/img/munchen.jpg}">
+    <img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen">
     <img class="aside" th:src="@{/static/img/parigi.jpg}">
     <img class="aside" th:src="@{/static/img/londra.jpg}">
     <img class="aside" th:src="@{/static/img/zanzibar.jpg}">
@@ -104,9 +104,9 @@
       </div>
       <div class="col-4">
         <h5>Lingue</h5>
-        <a th:href="@{/WEB-INF/view/lavorazione.html}" target="_blank">Inglese</a><br/>
-        <a th:href="@{/WEB-INF/view/lavorazione.html}" target="_blank">Italiano</a><br/>
-        <a th:href="@{/WEB-INF/view/lavorazione.html}" target="_blank">Spagnolo</a><br/>
+        <a th:href="@{/home}" style="text-decoration: none; color:white;">Italiano</a><br/>
+        <a th:href="@{/lavorazione}" target="_blank" style="text-decoration: none; color:white;">Inglese</a><br/>
+        <a th:href="@{/lavorazione}" target="_blank" style="text-decoration: none; color:white;">Spagnolo</a><br/>
       </div>
     </div>
   </footer>
