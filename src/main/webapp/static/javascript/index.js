@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-
     $(".aside").mouseenter(function(){
         $(this).css("width","350px")
     });

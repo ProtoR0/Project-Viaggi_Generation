@@ -16,4 +16,6 @@ public interface RecensioneService {
 	List<Recensione> findByAccountANDPubblicato(Account account, int pubblicato);
 	Recensione findRecensioneInListById(List<Recensione> lista, int id);
 	Recensione findById(int id);
+	int maxId();
+	
 }

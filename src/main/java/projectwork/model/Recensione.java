@@ -1,6 +1,7 @@
 package projectwork.model;
 
 import java.io.Serializable;
+import java.time.Duration;
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
@@ -48,7 +49,10 @@ public class Recensione implements Serializable{
 	private LocalDate dataFine;
 	
 	@Transient
-	private LocalDate durata;
+	private long durata;
+	
+	@Transient
+	private boolean image;
 
 	public int getId() {
 		return id;
@@ -114,12 +118,16 @@ public class Recensione implements Serializable{
 		this.dataFine = dataFine;
 	}
 
-	public LocalDate getDurata() {
+	public long getDurata() {
 		return durata;
 	}
 
-	public void setDurata(LocalDate durata) {
+	public void setDurata(long durata) {
 		this.durata = durata;
 	}
 	
+	public void setDurata() {
+		Duration durata = Duration.between(dataInizio, dataFine);
+		this.durata = durata.toDays();
+	}
 }

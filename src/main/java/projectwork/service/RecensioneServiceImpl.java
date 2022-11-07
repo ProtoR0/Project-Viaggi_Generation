@@ -80,4 +80,9 @@ public class RecensioneServiceImpl implements RecensioneService{
 	public Recensione findById(int id) {
 		return recensioneDao.findById(id).get();
 	}
+	
+	@Override
+	public int maxId() {
+		return recensioneDao.maxId();
+	}
 }

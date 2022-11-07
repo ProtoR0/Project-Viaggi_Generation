@@ -29,7 +29,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"projectwork.controller","projectwork.service","projectwork.dao"})
+@ComponentScan(basePackages = {"projectwork.controller","projectwork.service","projectwork.dao", "projectwork.configuration"})
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:application.properties"})
 @EnableJpaRepositories(basePackages = {"projectwork.dao"}, entityManagerFactoryRef = "emf", 

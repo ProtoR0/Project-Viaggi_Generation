@@ -33,28 +33,53 @@
             	<div class="col-1"></div>
                 <div class="col-4">
                     <h3 th:text="'Ciao ' + ${nome}"></h3><!--inserire variabile nome utente-->
-                    <h5>Inserisci la tua recensione</h5>
-                    <form action="" method="GET">
+                    <div th:if="${!inserisciFoto}">
+	                    <h5>Inserisci la tua recensione</h5>
+	                    <form action="" method="GET">
+	                        <label class="form-label">Destinazione
+	                            <select name="destinazione">
+	                                <option value="italia">Italia</option>
+	                                <option value="europa">Europa</option>
+	                                <option value="altro">Altro</option>
+	                            </select></label>
+	                            <br/>
+	                            <label class="form-label" for="dataInizio">Data Inizio: </label>
+	                            <input type="date" id="dataInizio" name="dataInizio">
+                        		<label class="form-label" for="dataFine">Data fine: </label>
+                        		<input type="date" id="dataFine" name="dataFine"> <br/>
+	                            <label class="form-label">Titolo</label>
+	                            <input type="text" placeholder="Titolo" class="form-control" column="5">
+	                            <label class="form-label">Descrizione</label>
+	                            <textarea placeholder="Descrizione" class="form-control" column="20" rows="15"></textarea><br/>
+	                            <br />
+	                            <input id="btn" type="submit" class="btn btn-primary" th:value="#{btn.inserisciFoto}"/><!-- conferma invio pubblicazione -->
+	                            <br>
+	                            <br>
+	                    </form>
+					</div>
+					<div th:if="${inserisciFoto}">
                         <label class="form-label">Destinazione
-                            <select name="destinazione">
-                                <option value="italia">Italia</option>
-                                <option value="europa">Europa</option>
-                                <option value="altro">Altro</option>
-                            </select></label>
-                            <br/>
-                            <label class="form-label">Titolo</label>
-                            <input type="text" placeholder="Titolo" class="form-control" column="5">
-                            <label class="form-label">Descrizione</label>
-                            <textarea placeholder="Descrizione" class="form-control" column="20" rows="15"></textarea><br/>
-                            <label class="form-label">Gallery</label>
-                            <input type="file"  class="form-control" column="5">
-                            <br />
-                            <input id="btn" type="submit" class="btn btn-primary"/><!-- conferma invio pubblicazione -->
-                            <br>
-                            <br>
-                        </form>
-                    <img class="aside" th:src="@{/static/img/milano.jpg}"><br/>
-                    <img class="aside" th:src="@{/static/img/monaco.jpg}">
+                        <select name="destinazione" disabled>
+                            <option value="italia">Italia</option>
+                            <option value="europa">Europa</option>
+                            <option value="altro">Altro</option>
+                        </select></label>
+                        <br/>
+                        <label class="form-label" for="dataInizio">Data Inizio: </label><input type="date" id="dataInizio" name="dataInizio" disabled>
+                        <label class="form-label" for="dataFine">Data fine: </label><input type="date" id="dataFine" name="dataFine" disabled>
+                        <label class="form-label">Titolo</label>
+                        <input type="text" placeholder="Titolo" class="form-control" column="5" th:value="${recensione.titolo}" disabled>
+                        <label class="form-label">Descrizione</label>
+                        <textarea placeholder="Descrizione" class="form-control" column="20" rows="15" th:value="${recensione.descrizione}" disabled></textarea><br/>
+                        <label class="form-label">Gallery</label>
+                        <br />
+                     	<form action="area_utente/inserimentoFoto" method="POST" enctype="multipart/form-data">
+	                     	<input type="file"  class="form-control" multiple>
+	                        <input id="btn" type="submit" class="btn btn-primary"/><!-- conferma invio pubblicazione -->
+                      	</form>
+                        <br>
+                        <br>
+					</div>
                 </div>
                 <div class="col-1"></div>
                 <div class="col-5">
@@ -71,7 +96,12 @@
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
-        <script th:src="@{/static/javascript/index.js}"></script>
+        <script th:src="@{/static/javascript/area_utente.js}"></script>
+        <script>
+        	document.getElementById("firstDateId").onchange = function () {
+            var input = document.getElementById("secondDateId");
+            input.setAttribute("min", this.value);
+        }</script>
     </div>
 </body>
 </html>
