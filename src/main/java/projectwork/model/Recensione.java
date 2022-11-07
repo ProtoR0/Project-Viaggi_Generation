@@ -8,12 +8,15 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Pattern;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "recensioni")
@@ -22,7 +25,7 @@ public class Recensione implements Serializable{
 	private static final long serialVersionUID = 3163140512569871504L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name = "destinazione", length = 25)
@@ -43,9 +46,11 @@ public class Recensione implements Serializable{
 	private Account account;
 	
 	@Column(name = "data_inizio", nullable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataInizio;
 	
 	@Column(name = "data_fine", nullable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataFine;
 	
 	@Transient
@@ -130,4 +135,13 @@ public class Recensione implements Serializable{
 		Duration durata = Duration.between(dataInizio, dataFine);
 		this.durata = durata.toDays();
 	}
+
+	public boolean isImage() {
+		return image;
+	}
+
+	public void setImage(boolean image) {
+		this.image = image;
+	}
+
 }

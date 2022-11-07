@@ -36,12 +36,12 @@
                         <h3>Login</h3>
                         <hr>
                         <label for="username" th:text="#{label.username} + ':'"></label><br>
-                        <input id="username" name= "username" type="text" autocomplete="off"><br/>
+                        <input id="username" name= "username" type="text" autocomplete="off" class="form-control"><br/>
                         <p th:if="${usernameError}" th:text="#{error.usernameErrato}" class="text-danger"></p>
                         <br/>
                         
                         <label for="password" th:text="#{label.password} + ':'"></label><br>
-                        <input id="password" name="password" type="password" autocomplete="off"><br/>
+                        <input id="password" name="password" type="password" autocomplete="off" class="form-control"><br/>
                         <p th:if="${passwordError}" th:text="#{error.passwordErrata}" class="text-danger"></p>
                         <br/>
                         
