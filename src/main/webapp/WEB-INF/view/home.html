@@ -31,27 +31,31 @@
                 <aside class="col-4" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
                 <div class="col-4" id="centro">
                     <table>
-                        <th>
+                        <thead>
+                                <tr>
+                                    <th>Lista recensioni disponibili</th>
+                                </tr>
+                        </thead>
+                        <tbody>
                             <tr>
-                                <td>Lista recensioni disponibili</td>
+                                <td></td>
+                                <!--collegamento Spring-->
                             </tr>
-                        </th>
-                        <tr>
-                            <td></td>
-                            <!--collegamento Spring-->
-                        </tr>
+                        </tbody>
                     </table>
                     <table>
-                        <th>
+                        <thead>
                             <tr>
-                                <td>Dettaglio recensione</td><td>Durata del viaggio</td><td>Immagini</td>
+                                <th th:text="#{label.descrizione}"></th><th th:text="#{label.durata}"></th><th>Immagini</th>
                             </tr>
-                        </th>
-                        <tr></tr>
-                        <tr>
-                            <td></td>
-                            <!--collegamento Spring-->
-                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td></td>
+                                <!--collegamento Spring-->
+                            </tr>
+                        </tbody>
                 </table>
                 </div>
                 <aside class="col-4" th:replace="../template/template :: asideDestra"></aside>

@@ -33,12 +33,16 @@
             	<div class="col-1"></div>
                 <div class="col-10">
                     <table>
-                        <tr>
-                        <th><td>Titolo</td><td>Località</td><td>Descrizione</td><td>Data Inizio</td><td>Data Fine</td></th>
-                        </tr>
-                        <tr>
-                            <td><!--Titolo--></td><td><!--Localita--></td><td><!--Descrizione--></td><td><!--Data Inizio--></td><td><!--Data Fine--></td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th th:text="#{label.titolo}"></th><th th:text="#{label.destinazione}"></th><th th:text="#{label.descrizione}"></th><th>Data Inizio</th><th>Data Fine</th></th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><!--Titolo--></td><td><!--Localita--></td><td><!--Descrizione--></td><td><!--Data Inizio--></td><td><!--Data Fine--></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="col-1"></div>
