@@ -2,6 +2,7 @@ package projectwork.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -35,8 +36,8 @@ public class AUtenteController {
 			
 			Account account = (Account) session.getAttribute("account");
 			
-			model.addAttribute("recensioni", recensioneService.findByAccountANDPubblicato(account, 1));
-			model.addAttribute("nome", account.getUsername());
+			model.addAttribute("recensioni", (List<Recensione>) recensioneService.findByAccount(account));
+			model.addAttribute("account", account);
 			model.addAttribute("inserisciFoto", inserisciFoto != null ? true : false);
 			model.addAttribute("recensione", id != null ? recensioneService.findById(id) : new Recensione());
 			
@@ -59,28 +60,29 @@ public class AUtenteController {
 	}
 	
 	@GetMapping("/inserimentoFoto")
-	public String inserisciFoto(@RequestParam(name = "foto", required = false) MultipartFile[] files, HttpSession session) {
+	public String inserisciFoto(HttpSession session, @RequestParam(name = "foto", required = false) MultipartFile files) {
 		if(files == null) {
 			Recensione recensione = recensioneService.findById((int) session.getAttribute("id_recensione"));
 			recensione.setImage(false);
 			return "redirect:/area_utente";
 		}
-		
-		int i = 1;
-		
-		for(MultipartFile file : files) {
-			String rootDir = session.getServletContext().getRealPath("/");
-			String filePath = rootDir + "static\\fotoRecensioni\\" + session.getAttribute("id_recensione") + "_" + i + ".png";
-	        try {
-	            file.transferTo(new File(filePath));
-	        } catch (IllegalStateException | IOException e) {
-	            e.printStackTrace();
-	            
-	        }
+	
+		String rootDir = session.getServletContext().getRealPath("/");
+		String filePath = rootDir + "static\\fotoRecensioni\\" + session.getAttribute("id_recensione") + "_" + 1 + ".png";
+        try {
+            files.transferTo(new File(filePath));
+        } catch (IllegalStateException | IOException e) {
+            e.printStackTrace();
+            
+        }
 	        
-	        i++;
-		}
 		
+		return "redirect:/area_utente";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteRecensione(@RequestParam("id") int id) {
+		recensioneService.deleteRecensione(recensioneService.findById(id));
 		return "redirect:/area_utente";
 	}
 }

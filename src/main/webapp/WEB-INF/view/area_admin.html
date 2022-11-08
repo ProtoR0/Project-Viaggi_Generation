@@ -27,45 +27,81 @@
             </div>
         </div>
         <section>
+        	<div th:if="${RecensioniDaVerificare}" id="popup">
+        		<p>Ci sono delle recensioni che vanno controllate prima della pubblicazione! <a th:href="@{/area_admin2}">Review</a></p>
+        	</div>
             <h3>Area Admin - Viaggi Utente - Lista utenti registrati</h3> 
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-5" id="centroAdmin">
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="titoloTabella">
-                                    <!--titoloTabella-->
-                                    Lista utenti registrati
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
-                            </tr>
-                        </tbody>
+                    <table class="table table-striped table-responsive">
+                    	<thead>
+							<tr>
+								<th class="align-middle" th:text="#{label.username}"></th>
+								<th class="align-middle" th:text="#{label.email}"></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="user : ${utenti}">
+								<td class="align-middle" th:text="${user.username}"></td>
+								<td class="align-middle" th:text="${user.email}"></td>
+								
+								<td class="align-middle text-end">
+									<a th:href="@{/area_utente/deleteUtente(id=${user.id})}" 
+										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
+								</td>
+							</tr>
+						</tbody>
                     </table>
+                    
                 </div>
                 </form>
                 <div class="col-6">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="titoloTabella">
-                                    <!--titoloTabella-->
-                                    Lista Viaggi
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
-                            </tr>
-                        </tbody>
+                    <table class="table table-striped table-responsive">
+                    	<thead>
+							<tr>
+								<th class="align-middle" th:text="#{label.stato}"></th>
+								<th class="align-middle" th:text="#{label.titolo}"></th>
+								<th class="align-middle" th:text="#{label.destinazione}"></th>
+								<th class="align-middle" th:text="#{label.durata}"></th>
+								<th class="align-middle" th:text="#{label.username}"></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="r : ${recensioni1}">
+								<td th:text="#{label.stato.Pubblicato}"></td>
+						
+								<td class="align-middle" th:text="${r.titolo}"></td>
+								<td class="align-middle" th:text="${r.destinazione}"></td>
+								<td class="align-middle" th:text="${r.durata}"></td>
+								<td class="align-middle" th:text="${r.account.username}"></td>
+								
+								<td class="align-middle text-end">
+									<a th:href="@{}" 
+										class="btn btn-primary btn-sm small-button" th:text="#{btn.edit}"></a>
+									<a th:href="@{/area_admin/deleteRecensione(id=${r.id})}" 
+										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
+								</td>
+							</tr>
+							<tr th:each="r : ${recensioni2}">
+								<td th:if="${r.pubblicato} == 2" th:text="#{label.stato.NonPubblicato}"></td>
+						
+								<td class="align-middle" th:text="${r.titolo}"></td>
+								<td class="align-middle" th:text="${r.destinazione}"></td>
+								<td class="align-middle" th:text="${r.durata}"></td>
+								<td class="align-middle" th:text="${r.account.username}"></td>
+																
+								<td class="align-middle text-end">
+									<a th:href="@{}" 
+										class="btn btn-primary btn-sm small-button" th:text="#{btn.edit}"></a>
+									<a th:href="@{/area_admin/deleteRecensione(id=${r.id})}" 
+										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
+								</td>
+							</tr>
+						</tbody>
                     </table>
                 </div>
             </div>
