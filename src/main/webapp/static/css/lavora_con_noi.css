@@ -8,6 +8,34 @@
     margin: 20px;
 }
 
+#messaggio {
+    resize: none;
+    height: 200px;
+    width: 500px;
+}
+
+#border {
+	border: 2px solid black !important;
+	border-radius: 15px;
+	margin-bottom: 10px;
+}
+
+#nome {
+	width: 200px;
+}
+
+#cognome {
+	width: 200px;
+}
+
+#telefono {
+    width: 300px;
+}
+
+#email {
+    width: 300px;
+}
+
 #centro {
     margin-top: 20px;
 }
