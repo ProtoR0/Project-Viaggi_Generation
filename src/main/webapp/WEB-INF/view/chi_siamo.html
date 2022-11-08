@@ -11,7 +11,7 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <link rel="stylesheet" th:href="@{/static/css/area_free.css}">
+        <link rel="stylesheet" th:href="@{/static/css/chi_siamo.css}">
 </head>
 <body>
     <div class="container p-0">
@@ -28,16 +28,26 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-4" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
-                <div class="col-4" id="centro">
+                <aside class="col-3">
+    				<img class="aside" th:src="@{/static/img/Venezia.jpg}">
+    				<img class="aside" th:src="@{/static/img/roma.jpg}">
+    				<img class="aside" th:src="@{/static/img/milano.jpg}">
+   					<img class="aside" th:src="@{/static/img/zanzibar.jpg}">
+  				</aside>
+                <div class="col-6" id="centro">
                 <h1>CHI SIAMO</h1>
               
                 </div>
-                <aside class="col-4" th:replace="../template/template :: asideDestra"></aside>
-            </div>
+                <aside class="col-3">
+                    <img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen">
+    				<img class="aside" th:src="@{/static/img/parigi.jpg}">
+    				<img class="aside" th:src="@{/static/img/londra.jpg}">
+    				<img class="aside" th:src="@{/static/img/monaco.jpg}">
+    			</aside>
+    			</div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
-        <script th:src="@{static/javascript/index.js}" type="text/javascript"></script>
+        <script th:src="@{static/javascript/chi_siamo.js}" type="text/javascript"></script>
     </div>
 </body>
 </html>
