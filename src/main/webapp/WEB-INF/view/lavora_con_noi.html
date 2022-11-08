@@ -34,7 +34,32 @@
     				<img class="aside" th:src="@{/static/img/milano.jpg}">
    					<img class="aside" th:src="@{/static/img/zanzibar.jpg}">
   				</aside>
-                <div class="col-6" id="centro">         
+                <div class="col-6" id="centro">
+                 <h1>Lavora con noi</h1>
+                 <p style="text-align: justify">
+                 Se vuoi entrare a far pare del team Viaggi Generation e mettere in gioco le tue capacità in un'azienda giovane, 
+                 stimolante e sempre in crescita, cerca tra i profili lavorativi quello che più si adatta alle tue esperienze e ai tuoi obiettivi professionali 
+                 ed invia il tuo CV compilando il form qui sotto indicando nel messaggio la posizione per cui desideri candidarti.
+                 </p>         
+	                    <form method="POST">
+	                    <fieldset>
+	                    <h5>Inserisci la tua candidatura</h5>
+	                    	<label class="form-label">Nome</label> 
+	                    	<input type="text" placeholder="Inserisci nome" class="form-control">
+                            <br/>
+                            <label class="form-label">Cognome</label> 
+	                    	<input type="text" placeholder="Inserisci cognome" class="form-control">
+	                        <br/>
+	                        <label class="form-label">Numero di telefono</label>
+	                    	<input type="text" id="telefono" placeholder="Inserisci numero di telefono" class="form-control">                        
+	                        <br/>
+                       		<label for="email" >Email</label>
+                            <input type="text" id="email" placeholder="Inserisci email" class="form-control"><br/>         
+                            <label class="form-label">Messaggio</label>
+                            <textarea id="messaggio" placeholder="Inserisci messaggio" class="form-control" ></textarea><br/>
+                            <br /> 
+                           </fieldset>                   
+	                    </form>                    
                 </div>
                 <aside class="col-3">
                     <img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen">
