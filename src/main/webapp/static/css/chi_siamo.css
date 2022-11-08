@@ -1,0 +1,41 @@
+#fotoHome{
+    width: 100%;
+}
+
+.aside {
+    width: 200px;
+    height: auto;
+    margin: 20px;
+}
+
+#centro {
+    margin-top: 20px;
+}
+
+#centroAdmin{
+    margin-bottom: 200px;
+}
+
+.imgCaricata {
+    width: 50px;
+}
+#footer{
+    background-color: rgb(40, 39, 39);
+    color: white;
+    padding: 20px;
+}
+
+section{
+    text-align: center;
+}
+
+input{
+    margin: 2px;
+}
+
+form {
+    text-align: left;
+}
+.container{
+    background-color: rgb(211, 211, 211);
+}

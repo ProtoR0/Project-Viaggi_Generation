@@ -6,27 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" th:href="@{/static/css/admin.css}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" th:href="@{/static/css/admin.css}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" th:href="@{/static/css/admin.css}">
 </head>
 
 <body>
   <!--header-->
   <div class="col-12" th:fragment="header">
-    <img th:src="@{/static/img/aereoM.jpg}" class="img-fluid" alt="" id="fotoHome">
+    <a th:href="@{/home}"><img th:src="@{/static/img/aereoM.jpg}" class="img-fluid" alt="" id="fotoHome"></a>
   </div>
   <!--fine header-->
-  <!--aside sinistra-->
-  <aside class="col-4" th:fragment="asideSinistra">
-    <img class="aside" th:src="@{/static/img/Venezia.jpg}">
-    <img class="aside" th:src="@{/static/img/roma.jpg}">
-    <img class="aside" th:src="@{/static/img/milano.jpg}">
-    <img class="aside" th:src="@{/static/img/zanzibar.jpg}">
-  </aside>
-  <!--fine aside sinistra-->
   <!--nav bar-->
   <div class="dropdown  justify-content-center">
     <nav th:fragment="navFragment" class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,8 +27,32 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="col-10">
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
- 
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#" role="button">
+                  Italia
+                </a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Europa
+                </a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Altro
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2 text-end">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#" role="button">
@@ -66,7 +81,7 @@
 			<ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" th:href="@{/login}" role="button">
-				Login
+                Login
               </a>
             </li>
 
@@ -75,7 +90,7 @@
                 Registrati
               </a>
             </li>
-            </ul>
+          </ul>
         </div>
         
         <div th:if="${account} != null" class="col-2 text-end">
@@ -106,36 +121,66 @@
     </nav>
   </div>
   <!--Fine nav bar-->
+  <!--aside sinistra-->
+  <aside class="col-4" th:fragment="asideSinistra">
+    <a th:href="@{https://www.tripadvisor.it/Attractions-g187870-Activities-Venice_Veneto.html}" target="_blank"><img
+        class="aside" th:src="@{/static/img/Venezia.jpg}"></a>
+    <a th:href="@{https://www.tripadvisor.it/Attractions-g187791-Activities-Rome_Lazio.html}" target="_blank"><img
+        class="aside" th:src="@{/static/img/roma.jpg}"></a>
+    <a th:href="@{https://www.tripadvisor.it/Attractions-g187849-Activities-Milan_Lombardy.html}" target="_blank"><img
+        class="aside" th:src="@{/static/img/milano.jpg}"></a>
+    <a th:href="@{https://www.tripadvisor.it/Attractions-g482884-Activities-Zanzibar_Island_Zanzibar_Archipelago.html}"
+      target="_blank"><img class="aside" th:src="@{/static/img/zanzibar.jpg}"></a>
+  </aside>
+  <!--fine aside sinistra-->
   <!--aside Destra-->
   <aside class="col-4" th:fragment="asideDestra">
-    <img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen">
-    <img class="aside" th:src="@{/static/img/parigi.jpg}">
-    <img class="aside" th:src="@{/static/img/londra.jpg}">
-    <img class="aside" th:src="@{/static/img/monaco.jpg}">
+    <a th:href="@{https://www.tripadvisor.it/Attractions-g187309-Activities-Munich_Upper_Bavaria_Bavaria.html}"
+      target="_blank"><img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen"></a>
+    <a th:href="@{https://www.tripadvisor.it/Attractions-g187147-Activities-Paris_Ile_de_France.html}"
+      target="_blank"><img class="aside" th:src="@{/static/img/parigi.jpg}"></a>
+    <a th:href="@{https://www.tripadvisor.it/Attractions-g186338-Activities-London_England.html}" target="_blank"><img
+        class="aside" th:src="@{/static/img/londra.jpg}"></a>
+    <a th:href="@{https://it.hotels.com/go/germania/cose-da-fare-a-monaco}" target="_blank"><img class="aside"
+        th:src="@{/static/img/monaco.jpg}"></a>
   </aside>
   <!--aside destra-->
   <!--footer-->
   <footer th:fragment="footerFragment" id="footer">
     <div class="row">
-      <div class="col-4">
+      <div class="col-3 text-center">
         <h5>Contatti</h5>
-        <p>Mail: viaggi.italiani@gmail.com</p>
-        <p>Telefono: 3486655985</p>
-      </div>
-      <div class="col-4">
+        <p class="text-start">Mail: viaggi.italiani@gmail.com</p>
+        <p class="text-start">Telefono: 3486655985</p><br/>
         <h5>Azienda</h5>
-        <p>Chi siamo</p>
-        <p>Mappa</p>
+        <p class="text-start"><a th:href="@{/chi_siamo}" style="text-decoration: none; color:white;">Chi siamo</a></p>
+        <p class="text-start">Lavora con noi</p>
       </div>
-      <div class="col-4">
-        <h5>Lingue</h5>
-        <a th:href="@{/home}" style="text-decoration: none; color:white;">Italiano</a><br/>
-        <a th:href="@{/lavorazione}" target="_blank" style="text-decoration: none; color:white;">Inglese</a><br/>
-        <a th:href="@{/lavorazione}" target="_blank" style="text-decoration: none; color:white;">Spagnolo</a><br/>
+      <div class="col-1"></div>
+      <div class="col-4 text-center">
+        <h5>Mappa</h5>
+        <div style="width: 400px;position: relative; margin-top: 10px;">
+          <iframe class="text-justify" width="300" height="200"
+            src="https://maps.google.com/maps?width=400&amp;height=200&amp;hl=en&amp;q=Via%20S.%20Martino%20della%20Battaglia%20Roma+(Viaggi%20Generation)&amp;ie=UTF8&amp;t=k&amp;z=16&amp;iwloc=B&amp;output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          </iframe>
+          <style>
+            #gmap_canvas img {
+              max-width: none !important;
+              background: none !important
+            }
+          </style>
+        </div><br />
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3 text-center">
+          <h5>Lingue</h5>
+          <a th:href="@{/home}" class="text-end" style="text-decoration: none; color:white;"><p class="text-start"><img th:src="@{/static/img/bandierait.png}" alt="bandiera Italiana"> Italiano</p></a>
+          <a th:href="@{/lavorazione}" class="text-end" target="_blank" style="text-decoration: none; color:white;"><p class="text-start"><img th:src="@{/static/img/bandieragb.png}" alt="bandiera Inglese"> Inglese</p></a>
+          <a th:href="@{/lavorazione}" class="text-end" target="_blank" style="text-decoration: none; color:white;"><p class="text-start"><img th:src="@{/static/img/bandierasp.png}" alt="bandiera Spagna"> Spagnolo</p></a>
+        </div>
       </div>
-    </div>
   </footer>
   <script th:src="@{/static/javascript/index.js}"></script>
 </body>
-
 </html>
