@@ -21,17 +21,16 @@ public class AAdmin2Controller {
 	@Autowired
 	private RecensioneService recensioneService;
 
+	private Integer id;
+	
 	@GetMapping
 	public String getPage(HttpSession session, Model model,@RequestParam(name = "id", required = false) Integer id) {
 	
 		if(session.getAttribute("admin") != null) {
 			List<Recensione> recensioni = recensioneService.findByPubblicato(0);
 			model.addAttribute("recensioni", recensioni);
-			if(id != null) {
-				model.addAttribute("recensione", recensioneService.findRecensioneInListById(recensioni, id) );
-			}else {
-				model.addAttribute("recensione", new Recensione());
-			}
+			model.addAttribute("recensione", id != null ? recensioneService.findRecensioneInListById(recensioni, id) : new Recensione());
+
 			return "area_admin_2";			
 		}
 
@@ -39,7 +38,7 @@ public class AAdmin2Controller {
 	}
 	
 	@GetMapping("/cambioStato")
-	public String cambioStato(@RequestParam("id") int id, @RequestParam("pubblicare") String pubblicare) {
+	public String cambioStato(@RequestParam("pubblicare") String pubblicare) {
 		Recensione recensione= recensioneService.findById(id);
 		recensione.setPubblicato(pubblicare.equals("Pubblicare") ? 1 : 2);
 		

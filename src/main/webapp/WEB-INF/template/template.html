@@ -19,8 +19,8 @@
   </div>
   <!--fine header-->
   <!--nav bar-->
-  <div class="dropdown  justify-content-center">
     <nav th:fragment="navFragment" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="dropdown">
         <a class="navbar-brand" th:href="@{/home}" id="home">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
           aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,14 +36,14 @@
                 </a>
               </li>
 
-              <li class="nav-item dropdown">
+              <li class="nav-item">
                 <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   Europa
                 </a>
               </li>
 
-              <li class="nav-item dropdown">
+              <li class="nav-item">
                 <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   Altro
@@ -51,6 +51,7 @@
               </li>
             </ul>
           </div>
+<<<<<<< Updated upstream
         </div>       
      	<div th:if="${account} == null AND ${admin} == null" class="col-2 text-end">
 			<ul class="navbar-nav">
@@ -68,33 +69,47 @@
           </ul>
         </div>
         
+=======
+        </div>
+                
+>>>>>>> Stashed changes
         <div th:if="${account} != null" class="col-2 text-end">
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
 			<ul class="navbar-nav">
-	            <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${account.username}"></a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" th:href="@{/area_utente}">Recensioni</a>
-			          <a class="dropdown-item" href="@{/login}">Esci</a>
-			        </div>
-				</li>
+				<li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target="#ddAccount">
+		          <span th:text="${account.username}"></span>
+		        </a>
+		        <div class="dropdown-menu" id="ddAccount" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" th:href="@{/area_utente}">Recensioni</a>
+		          <a class="dropdown-item" th:href="@{/login}">Esci</a>
+		        </div>
+		      </li>
         	</ul>
+        </div>
        </div>
        
        <div th:if="${admin} != null" class="col-2 text-end">
 			<ul class="navbar-nav">
 	            <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${admin.username}"></a>
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+			        th:text="${admin.username}"></a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			          <a class="dropdown-item" th:href="@{area_admin}">Lista recensioni ed utenti</a>
 			          <a class="dropdown-item" th:href="@{area_admin2}">Review recensioni</a>			          
-			          <a class="dropdown-item" href="@{/login}">Esci</a>
+			          <a class="dropdown-item" th:href="@{/login}">Esci</a>
 			        </div>
 				</li>
         	</ul>
       </div>
-      
+    </div>    
     </nav>
+<<<<<<< Updated upstream
+
+=======
   </div>
+  
+>>>>>>> Stashed changes
   <!--Fine nav bar-->
   <!--aside sinistra-->
   <aside class="col-4" th:fragment="asideSinistra">

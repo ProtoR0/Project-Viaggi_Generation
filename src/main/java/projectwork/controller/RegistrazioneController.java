@@ -25,12 +25,12 @@ public class RegistrazioneController {
 	
 	@GetMapping
 	public String getPage(Model model) {
-		model.addAttribute("account", new Account());
+		model.addAttribute("newAccount", new Account());
 		return "registrazione";
 	}
 	
 	@PostMapping
-	public String register(@Valid @ModelAttribute("account") Account account, BindingResult result, Model model) {
+	public String register(@Valid @ModelAttribute("newAccount") Account account, BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {
 			return "registrazione";

@@ -30,33 +30,28 @@
             <div class="row">
                 <aside class="col-4" th:replace="../template/template :: asideSinistra"></aside><!--asideSinistra-->
                 <div class="col-4" id="centro">
-                    <table>
-                        <thead>
-                                <tr>
-                                    <th>Lista recensioni disponibili</th>
-                                </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
-                            </tr>
-                        </tbody>
+                    <table class="table table-striped table-responsive">
+                    	<thead>
+							<tr>
+								<th class="align-middle" th:text="#{label.titolo}"></th>
+								<th class="align-middle" th:text="#{label.destinazione}"></th>
+								<th class="align-middle" th:text="#{label.username}"></th>
+								<th class="align-middle" th:text="#{label.durata}"></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="r : ${recensioni}">
+						
+								<td class="align-middle" th:text="${r.titolo}"></td>
+								<td class="align-middle" th:text="${r.destinazione}"></td>
+								<td class="align-middle" th:text="${r.account.username}"></td>
+								<td class="align-middle" th:text="${r.durata}"></td>
+								
+								
+							</tr>
+						</tbody>
                     </table>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="align-middle" th:text="#{label.descrizione}"></th><th class="align-middle" th:text="#{label.durata}"></th><th>Immagini</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr></tr>
-                            <tr>
-                                <td></td>
-                                <!--collegamento Spring-->
-                            </tr>
-                        </tbody>
-                </table>
                 </div>
                 <aside class="col-4" th:replace="../template/template :: asideDestra"></aside>
             </div>

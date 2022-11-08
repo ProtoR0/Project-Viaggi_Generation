@@ -34,16 +34,16 @@
                 <div class="col-3 text-start">
 	                <h3>Area Admin</h3>
 	                    
-                    <p><Strong>Titolo:</Strong> </p> <span th:text="${recensione.titolo}"></span>
+                    <p><Strong>Titolo: </Strong> </p> <span th:text="${recensione.titolo}"></span><br>
                     
-                    <p><Strong>Destinazione:</Strong> </p> <span th:text="${recensione.destinazione}"></span>
+                    <p><Strong>Destinazione: </Strong> </p> <span th:text="${recensione.destinazione}"></span><br>
                     
-                    <p><Strong>Descrizione</Strong> </p><br/>
+                    <p><Strong>Descrizione: </Strong> </p>
                     
                     <p th:text="${recensione.descrizione}"></p>
                     
                     <!--  Aggiungere parte foto -->
-                    <form method="GET" action="area_admin2/cambioStato?id=${recensione.id}">
+                    <form method="GET" action="area_admin2/cambioStato">
                         
                         <label for="checkbox">Pubblicare: </label><br/>
                         <input type="radio" id="pubblicare" name="pubblicare" value="Pubblicare" required>
