@@ -13,4 +13,10 @@ public class LavoriInCorso {
 		
 		return "lavorazione";
 	}
+	
+	@GetMapping("/sp")
+	public String getPageSp() {
+		
+		return "lavorazione_spagnolo";
+	}
 }
