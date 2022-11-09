@@ -28,20 +28,23 @@
 
 .card {
 	background-color: white;
+	border: 1px solid grey !important;
+	border-radius: 10px;
 }
 
 #border {
 	border: 2px solid black !important;
 	border-radius: 15px;
 	margin-bottom: 10px;
+	background-color: rgb(225, 225, 225);
 }
 
 #nome {
-	width: 200px;
+	width: 300px;
 }
 
 #cognome {
-	width: 200px;
+	width: 300px;
 }
 
 #telefono {
@@ -63,6 +66,7 @@
 .imgCaricata {
     width: 50px;
 }
+
 #footer{
     background-color: rgb(40, 39, 39);
     color: white;
