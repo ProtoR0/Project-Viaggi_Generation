@@ -48,14 +48,14 @@
                        		<label class="form-label" for="dataFine">Data fine: </label>
                        		<input type="date" id="dataFine" name="dataFine" th:field="*{dataFine}" class="form-control" > <br/>
                        		
-                            <label class="form-label">Titolo</label>
-                            <input type="text" placeholder="Titolo" class="form-control" column="5" th:field="*{titolo}">
+                            <label class="form-label">Titolo:</label>
+                            <input type="text" placeholder="Titolo" id="titolo" class="form-control" column="5" th:field="*{titolo}">
                             
                           	<p th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}" 
 								class="text-danger"></p>
                             
-                            <label class="form-label">Descrizione</label>
-                            <textarea placeholder="Descrizione" class="form-control" column="20" rows="15" th:field="*{descrizione}"></textarea><br/>
+                            <label class="form-label">Descrizione:</label>
+                            <textarea placeholder="Descrizione" id="descrizione" class="form-control" column="20" rows="15" th:field="*{descrizione}"></textarea><br/>
                             <p th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}" 
 								class="text-danger"></p>
                             
@@ -93,7 +93,7 @@
 					</div>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-5">
+                <div class="col-6">
                 	<h5>Lista dei viaggi</h5>
                     <table class="table table-striped table-responsive">
                     	<thead>
@@ -125,18 +125,23 @@
 						</tbody>
                     </table>
                 </div>
-                <div class="col-1"></div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
         <script th:src="@{/static/javascript/area_utente.js}"></script>
         <script>
 
-        	document.getElementById("firstDateId").onchange = function () {
-            var input = document.getElementById("secondDateId");
-            input.setAttribute("min", this.value);
+        	document.getElementById("dataInizio").onchange = function () {
+	            var input = document.getElementById("dataFine");
+	            input.setAttribute("min", this.value);
             
-        	};
+        		};
+        	
+        	document.getElementById("dataFine").onchange = function () {
+                var input = document.getElementById("dataInizio");
+                input.setAttribute("max", this.value);
+                
+            	};
 
         </script>
     </div>

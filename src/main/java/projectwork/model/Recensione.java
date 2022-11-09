@@ -33,7 +33,7 @@ public class Recensione implements Serializable{
 	private String destinazione;
 	
 	@Column(name = "titolo", length = 50, nullable = false)
-	@Pattern(regexp = "[a-zA-Z\\s]{5,50}", message = "error.titolo")
+	@Pattern(regexp = "[a-zA-Z\\s'-_]{5,50}", message = "error.titolo")
 	private String titolo;
 	
 	@Column(name = "descrizione", length = 4048, nullable = false)

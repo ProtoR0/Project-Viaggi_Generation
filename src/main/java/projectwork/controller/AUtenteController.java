@@ -57,7 +57,12 @@ public class AUtenteController {
 			session.setAttribute("id_recensione", recensioneService.maxId());
 			return "redirect:/area_utente?id=" + session.getAttribute("id_recensione") + "&if=true";
 		}
-		return "redirect:/area_utente";
+		
+		model.addAttribute("account", session.getAttribute("account"));
+		model.addAttribute("inserisciFoto", false);
+		model.addAttribute("recensioni", (List<Recensione>) recensioneService.findByAccount( (Account)session.getAttribute("account")));
+		
+		return "area_utente";
 	}
 	
 	@PostMapping("/inserimentoFoto")

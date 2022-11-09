@@ -54,3 +54,7 @@ textarea{
 #foto{
 	width: 300px;
 }
+.image{
+	width: 30%;
+	height: auto;
+}
