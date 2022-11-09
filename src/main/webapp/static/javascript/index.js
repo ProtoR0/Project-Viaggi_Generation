@@ -1,9 +1,9 @@
 $(document).ready(function(){
     $(".aside").mouseenter(function(){
-        $(this).css("width","350px")
+        $(this).css("width","90%")
     });
         $(".aside").mouseleave(function(){
-            $(this).css("width","300px")
+            $(this).css("width","80%")
     });
 
 });
