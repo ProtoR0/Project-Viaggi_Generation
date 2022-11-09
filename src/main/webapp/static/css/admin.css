@@ -3,9 +3,18 @@
 }
 
 .aside {
-    width: 300px;
+    width: 80%;
     height: auto;
-    margin: 20px;
+    padding: 1%;
+}
+#asideDestra{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#asideSinistra{
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 #centro {
