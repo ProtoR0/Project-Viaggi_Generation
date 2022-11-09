@@ -28,15 +28,19 @@
   </div>
   <!--fine header-->
   <!--nav bar-->
+  <div class="row" id="menu1">     <!--Menu-->
+    <div class="col-12" id="menu3">
+        <div class="dropdown  justify-content-center">   
     <nav th:fragment="navFragment" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
       <div class="dropdown">
-        <a class="navbar-brand" th:href="@{/home}" id="home">Home</a>
+        <a class="navbar-brand" th:href="@{/home}" id="home2">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
           aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="col-10">
-          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown6">
 
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -58,7 +62,6 @@
               </li>
             </ul>
           </div>
-
         </div>       
      	<div th:if="${account} == null AND ${admin} == null" class="col-2 text-end">
 			<ul class="navbar-nav">
@@ -75,43 +78,42 @@
             </li>
           </ul>
         </div>
-                
-
+        
         <div th:if="${account} != null" class="col-2 text-end">
-        <div class="dropdown">
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown3">
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target="#ddAccount">
+		        <a class="nav-link dropdown-toggle" role="button" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target="#ddAccount">
 		          <span th:text="${account.username}"></span>
 		        </a>
-		        <div class="dropdown-menu" id="ddAccount" aria-labelledby="navbarDropdownMenuLink">
-		          <a class="dropdown-item" th:href="@{/area_utente}">Recensioni</a>
-		          <a class="dropdown-item" th:href="@{/login}">Esci</a>
-		        </div>
+		        <ul class="dropdown-menu dropdown-menu-dark" id="ddAccount" aria-labelledby="navbarDropdown">
+		          <li><a class="dropdown-item" th:href="@{/area_utente}">Recensioni</a></li>
+		          <li><a class="dropdown-item" th:href="@{/login}">Esci</a></li>
+		        </ul>
 		      </li>
         	</ul>
         </div>
        </div>
-       </div>
-       
        <div th:if="${admin} != null" class="col-2 text-end">
 			<ul class="navbar-nav">
 	            <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+			        <a class="nav-link dropdown-toggle" role="button" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
 			        th:text="${admin.username}"></a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" th:href="@{area_admin}">Lista recensioni ed utenti</a>
-			          <a class="dropdown-item" th:href="@{area_admin2}">Review recensioni</a>			          
-			          <a class="dropdown-item" th:href="@{/login}">Esci</a>
-			        </div>
+			        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			          <li><a class="dropdown-item" th:href="@{area_admin}">Lista recensioni ed utenti</a></li>
+			          <li><a class="dropdown-item" th:href="@{area_admin2}">Review recensioni</a></li>		          
+			          <li><a class="dropdown-item" th:href="@{/login}">Esci</a></li>
+			        </ul>
 				</li>
         	</ul>
       </div>  
       </div>
+    </div>  
+    </div>  
     </nav>
-    
-  
+  </div>
+</div>
+</div>
   <!--Fine nav bar-->
   <!--aside sinistra-->
   <aside class="col-4" th:fragment="asideSinistra">
