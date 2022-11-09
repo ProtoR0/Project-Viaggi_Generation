@@ -2,6 +2,7 @@ package projectwork.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -59,23 +60,37 @@ public class AUtenteController {
 		return "redirect:/area_utente";
 	}
 	
-	@GetMapping("/inserimentoFoto")
-	public String inserisciFoto(HttpSession session, @RequestParam(name = "foto", required = false) MultipartFile files) {
+	@PostMapping("/inserimentoFoto")
+	public String inserisciFoto(HttpSession session, @RequestParam(name = "foto", required = false) List<MultipartFile> files) {
 		if(files == null) {
 			Recensione recensione = recensioneService.findById((int) session.getAttribute("id_recensione"));
 			recensione.setImage(false);
 			return "redirect:/area_utente";
 		}
+		
+		if(files.size()>3) {
+			List<MultipartFile> temp = new ArrayList<MultipartFile>();
+			temp.add(files.get(0));
+			temp.add(files.get(1));
+			temp.add(files.get(2));
+			files = temp;
+		}
 	
-		String rootDir = session.getServletContext().getRealPath("/");
-		String filePath = rootDir + "static\\fotoRecensioni\\" + session.getAttribute("id_recensione") + "_" + 1 + ".png";
-        try {
-            files.transferTo(new File(filePath));
-        } catch (IllegalStateException | IOException e) {
-            e.printStackTrace();
-            
-        }
+		int i=1;
+		
+		for (MultipartFile file : files) {
+			String rootDir = session.getServletContext().getRealPath("/");
+			String filePath = rootDir + "static\\fotoRecensioni\\" + session.getAttribute("id_recensione") + "_" + i + ".png";
+	        try {
+	            file.transferTo(new File(filePath));
+	        } catch (IllegalStateException | IOException e) {
+	            e.printStackTrace();
+	            
+	        }
+		     
+	        i++;
 	        
+		}
 		
 		return "redirect:/area_utente";
 	}

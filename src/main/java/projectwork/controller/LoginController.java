@@ -26,7 +26,13 @@ public class LoginController {
 	private AdminService adminService;
 
 	@GetMapping
-	public String getPage() {
+	public String getPage(HttpSession session) {
+		if(session.getAttribute("account") != null) {
+			session.removeAttribute("account");
+		}
+		if(session.getAttribute("admin") != null) {
+			session.removeAttribute("admin");
+		}
 		return "login";
 	}
 	
@@ -49,6 +55,7 @@ public class LoginController {
 				}else {
 					model.addAttribute("usernameError", true);	
 				}	
+				
 			}else if(type.equals("Admin")) {									// Login per account admin
 				Admin admin = adminService.findByUsername(username);
 				
@@ -64,6 +71,7 @@ public class LoginController {
 				}	
 					
 				}
+			
 			return "login";
 			}
 		

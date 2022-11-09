@@ -3,6 +3,7 @@ package projectwork.model;
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -132,8 +133,8 @@ public class Recensione implements Serializable{
 	}
 	
 	public void setDurata() {
-		Duration durata = Duration.between(dataInizio, dataFine);
-		this.durata = durata.toDays();
+		this.durata = dataInizio.until(dataFine, ChronoUnit.DAYS);
+		durata++;
 	}
 
 	public boolean isImage() {

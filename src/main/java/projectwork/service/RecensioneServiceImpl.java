@@ -85,4 +85,17 @@ public class RecensioneServiceImpl implements RecensioneService{
 	public int maxId() {
 		return recensioneDao.maxId();
 	}
+
+	@Override
+	public List<Recensione> findByDestinazioneANDPubblicato(String locazione, int pubblicato) {
+		List<Recensione> recensioni = new ArrayList<>();
+		
+		for (Recensione recensione : recensioneDao.findAll()) {
+			if(recensione.getPubblicato() == pubblicato && recensione.getDestinazione().equals(locazione)) {
+				recensioni.add(recensione);
+			}
+		}
+		
+		return recensioni;
+	}
 }

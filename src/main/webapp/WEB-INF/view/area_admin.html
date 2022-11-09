@@ -27,7 +27,7 @@
             </div>
         </div>
         <section>
-        	<div th:if="${RecensioniDaVerificare}" id="popup">
+        	<div th:if="${RecensioniDaVerificare != null}" id="popup">
         		<p>Ci sono delle recensioni che vanno controllate prima della pubblicazione! <a th:href="@{/area_admin2}">Review</a></p>
         	</div>
             <h3>Area Admin - Viaggi Utente - Lista utenti registrati</h3> 
@@ -80,7 +80,7 @@
 								<td class="align-middle" th:text="${r.account.username}"></td>
 								
 								<td class="align-middle text-end">
-									<a th:href="@{}" 
+									<a th:href="@{/area_admin2(id=${r.id})}" 
 										class="btn btn-primary btn-sm small-button" th:text="#{btn.edit}"></a>
 									<a th:href="@{/area_admin/deleteRecensione(id=${r.id})}" 
 										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
@@ -95,7 +95,7 @@
 								<td class="align-middle" th:text="${r.account.username}"></td>
 																
 								<td class="align-middle text-end">
-									<a th:href="@{}" 
+									<a th:href="@{/area_admin2(id=${r.id})}" 
 										class="btn btn-primary btn-sm small-button" th:text="#{btn.edit}"></a>
 									<a th:href="@{/area_admin/deleteRecensione(id=${r.id})}" 
 										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>

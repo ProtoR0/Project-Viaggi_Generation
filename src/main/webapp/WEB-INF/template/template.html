@@ -10,6 +10,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" th:href="@{/static/css/admin.css}">
+  	<style>
+	  #gmap_canvas img {
+	    max-width: none !important;
+	    background: none !important
+	  }
+	  nav{
+	  	width:100%;
+	  }
+	</style>
 </head>
 
 <body>
@@ -31,27 +40,25 @@
 
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#" role="button">
+                <a class="nav-link" th:href="@{/home(destinazione=italia)}" role="button">
                   Italia
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                <a class="nav-link" th:href="@{/home(destinazione=europa)}" role="button">
                   Europa
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                <a class="nav-link" th:href="@{/home(destinazione=altro)}" role="button">
                   Altro
                 </a>
               </li>
             </ul>
           </div>
-<<<<<<< Updated upstream
+
         </div>       
      	<div th:if="${account} == null AND ${admin} == null" class="col-2 text-end">
 			<ul class="navbar-nav">
@@ -68,12 +75,10 @@
             </li>
           </ul>
         </div>
-        
-=======
-        </div>
                 
->>>>>>> Stashed changes
+
         <div th:if="${account} != null" class="col-2 text-end">
+        <div class="dropdown">
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
@@ -88,6 +93,7 @@
         	</ul>
         </div>
        </div>
+       </div>
        
        <div th:if="${admin} != null" class="col-2 text-end">
 			<ul class="navbar-nav">
@@ -101,15 +107,11 @@
 			        </div>
 				</li>
         	</ul>
+      </div>  
       </div>
-    </div>    
     </nav>
-<<<<<<< Updated upstream
-
-=======
-  </div>
+    
   
->>>>>>> Stashed changes
   <!--Fine nav bar-->
   <!--aside sinistra-->
   <aside class="col-4" th:fragment="asideSinistra">
@@ -154,12 +156,7 @@
             src="https://maps.google.com/maps?width=400&amp;height=200&amp;hl=en&amp;q=Via%20S.%20Martino%20della%20Battaglia%20Roma+(Viaggi%20Generation)&amp;ie=UTF8&amp;t=k&amp;z=16&amp;iwloc=B&amp;output=embed"
             frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
           </iframe>
-          <style>
-            #gmap_canvas img {
-              max-width: none !important;
-              background: none !important
-            }
-          </style>
+
         </div><br />
         </div>
         <div class="col-1"></div>

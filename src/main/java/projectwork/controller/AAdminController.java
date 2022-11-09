@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import projectwork.model.Account;
 import projectwork.model.Recensione;
@@ -35,11 +36,17 @@ public class AAdminController {
 			model.addAttribute("recensioni1", (List<Recensione>) recensioneService.findByPubblicato(1));
 			model.addAttribute("recensioni2", (List<Recensione>) recensioneService.findByPubblicato(2));
 			
-			model.addAttribute("RecensioniDaVerificare", recensioneService.findByPubblicato(0) != null ? true : false);
+			model.addAttribute("RecensioniDaVerificare", recensioneService.findByPubblicato(0) != null ? true : null);
 			
 			return "area_admin";
 		}
 		
 		return "redirect:/home";
+	}
+	
+	@GetMapping("/deleteRecensione")
+	public String deleteRecensione(@RequestParam("id") int id) {
+		recensioneService.deleteRecensione(recensioneService.findById(id));
+		return "redirect:/area_utente";
 	}
 }

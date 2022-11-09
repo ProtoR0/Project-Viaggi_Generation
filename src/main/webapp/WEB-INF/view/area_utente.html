@@ -74,16 +74,18 @@
                             <option value="altro">Altro</option>
                         </select></label>
                         <br/>
+                        <span class="text-start">
                         <label class="form-label" for="dataInizio">Data Inizio: </label><input type="date" id="dataInizio" name="dataInizio" class="form-control" th:value="${recensione.dataInizio}" disabled>
                         <label class="form-label" for="dataFine">Data fine: </label><input type="date" id="dataFine" name="dataFine" class="form-control" th:value="${recensione.dataFine}" disabled>
-                        <label class="form-label">Titolo</label>
+                        <label class="form-label">Titolo:</label>
                         <input type="text" placeholder="Titolo" class="form-control" column="5" th:value="${recensione.titolo}" disabled>
-                        <label class="form-label">Descrizione</label>
-                        <textarea placeholder="Descrizione" class="form-control" column="20" rows="15" th:value="${recensione.descrizione}" disabled></textarea><br/>
-                        <label class="form-label">Gallery</label>
+                        <label class="form-label">Descrizione:</label>
+                        <textarea placeholder="Descrizione" class="form-control" column="20" rows="15" th:text="${recensione.descrizione}" disabled></textarea><br/>
+                        <label class="form-label">Inserisci le foto (Massimo 3):</label>
                         <br />
-                     	<form action="area_utente/inserimentoFoto" method="GET" enctype="multipart/form-data">
-	                     	<input type="file" id="foto" name="foto" class="form-control">
+                        </span>
+                     	<form action="area_utente/inserimentoFoto" method="POST" enctype="multipart/form-data">
+	                     	<input type="file" id="foto" name="foto" class="form-control" multiple>
 	                        <input id="btn" type="submit" class="btn btn-primary btn-block"/><!-- conferma invio pubblicazione -->
                       	</form>
                         <br>

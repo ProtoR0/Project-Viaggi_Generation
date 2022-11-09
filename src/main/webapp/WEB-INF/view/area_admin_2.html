@@ -46,10 +46,27 @@
                     <form method="GET" action="area_admin2/cambioStato">
                         
                         <label for="checkbox">Pubblicare: </label><br/>
-                        <input type="radio" id="pubblicare" name="pubblicare" value="Pubblicare" required>
-                        <label for="pubblicare">Si</label><br>
-                        <input type="radio" id="Non pubblicare" name="pubblicare" value="Non pubblicare" required>
-                        <label for="Non pubblicare">No</label><br>
+                        <div th:if="${recensione.pubblicato == 0}">
+	                        <input type="radio" id="pubblicare" name="pubblicare" value="Pubblicare" required>
+	                        <label for="pubblicare">Si</label><br>
+	                        <input type="radio" id="Non pubblicare" name="pubblicare" value="Non pubblicare" required>
+	                        <label for="Non pubblicare">No</label><br>
+						</div>
+						
+						<div th:if="${recensione.pubblicato == 1}">
+	                        <input type="radio" id="pubblicare" name="pubblicare" value="Pubblicare" checked required>
+	                        <label for="pubblicare">Si</label><br>
+	                        <input type="radio" id="Non pubblicare" name="pubblicare" value="Non pubblicare" required>
+	                        <label for="Non pubblicare">No</label><br>
+						</div>
+						
+						<div th:if="${recensione.pubblicato == 2}">
+	                        <input type="radio" id="pubblicare" name="pubblicare" value="Pubblicare" required>
+	                        <label for="pubblicare">Si</label><br>
+	                        <input type="radio" id="Non pubblicare" name="pubblicare" value="Non pubblicare" checked required>
+	                        <label for="Non pubblicare">No</label><br>
+						</div>
+				
 				
                         <input type="submit" class="btn btn-primary"/><!-- conferma invio pubblicazione -->
                         <br>
