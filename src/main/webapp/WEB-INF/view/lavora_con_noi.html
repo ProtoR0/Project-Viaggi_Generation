@@ -28,34 +28,53 @@
         </div>
         <section>
             <div class="row">
-                <aside class="col-3">
-    				<img class="aside" th:src="@{/static/img/Venezia.jpg}">
+                <aside class="col-3"> 
+               		<img class="aside" th:src="@{/static/img/Venezia.jpg}">   				
     				<img class="aside" th:src="@{/static/img/roma.jpg}">
     				<img class="aside" th:src="@{/static/img/milano.jpg}">
-   					<img class="aside" th:src="@{/static/img/zanzibar.jpg}">
+   					<img class="aside" th:src="@{/static/img/zanzibar.jpg}">   					
+   					<div class="row">
+                    <div class="col-10">
+                        <div class="card">
+                            <img class="card-img-top" th:src="@{/static/img/leggere.jpg}" />
+                            <div class="card-body">
+                                <h6 class="card-title1"><strong>Addetto alla revisione</strong></h6>
+                                <p class="card-text1"> Gli addetti alla revisione devono fornire un'eccellente esperienza del cliente, rispondere alle recensioni online dei clienti
+                                cercando di evitare che recensioni non coerenti con i principi dell'azienda possano essere pubblicati, si deve assicurare che la recensione del cliente 
+                                sia online e che sia visibile...</p>
+                                <a href="#" target="_blank" class="btn btn-primary">Read more</a>                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
   				</aside>
                 <div class="col-6" id="centro">
-                 <h1>Lavora con noi</h1>
+                 <h1><strong>Lavora con noi</strong></h1>
                  <p style="text-align: justify">
+                 Siamo un team di persone affiatate, sempre pronte a dare il massimo per la buona riuscita delle nostre iniziative, 
+                 stiamo cercando persone talentuose e dinamiche, pronte ad unirsi al nostro team per raggiungere i nostri obiettivi. <br />                
                  Se vuoi entrare a far pare del team Viaggi Generation e mettere in gioco le tue capacità in un'azienda giovane, 
                  stimolante e sempre in crescita, cerca tra i profili lavorativi quello che più si adatta alle tue esperienze e ai tuoi obiettivi professionali 
                  ed invia il tuo CV compilando il form qui sotto indicando nel messaggio la posizione per cui desideri candidarti.
-                 </p>         
+                 </p>        
 	                 <form method="POST">
 	                    <fieldset class="border p-2" id="border">
-	                    <h5>Inserisci la tua candidatura</h5>
-	                    	<label class="form-label">Nome</label> 
+	                    <h3><strong>Inserisci la tua candidatura</strong></h3>
+	                    	<label class="form-label"><strong>Nome</strong></label> 
 	                    	<input type="text" id="nome" placeholder="Inserisci nome" class="form-control"><br />
-                            <label class="form-label">Cognome</label> 
+                            <label class="form-label"><strong>Cognome</strong></label> 
 	                    	<input type="text" id="cognome" placeholder="Inserisci cognome" class="form-control">
 	                        <br/>
-	                        <label class="form-label">Numero di telefono</label>
+	                        <label class="form-label"><strong>Numero di telefono</strong></label>
 	                    	<input type="text" id="telefono" placeholder="Inserisci numero di telefono" class="form-control"><br />                        
-                       		<label for="email" >Email</label>
+                       		<label for="email" ><strong>Email</strong></label>
                             <input type="text" id="email" placeholder="Inserisci email" class="form-control"><br/>         
-                            <label class="form-label">Messaggio</label>
-                            <textarea id="messaggio" placeholder="Inserisci messaggio" class="form-control" ></textarea><br/>
-                            <br /> 
+                            <label class="form-label"><strong>Messaggio</strong></label>
+                            <textarea id="messaggio" placeholder="Inserisci messaggio" class="form-control" ></textarea><br/>                        
+                            <label class="form-label"><strong>Allega il tuo CV</strong></label><br /> 
+                            <input type="file" id="curriculum" class="form-control" style="width: 500px"/><br />
+                            <input type="button" id="invia" class="btn btn-primary small-button" value="Invia" />
+                            <input type="reset" id="reset" class="btn btn-primary small-button" value="Ripristina" />
                          </fieldset>                   
 	                  </form>                    
                 </div>
@@ -64,6 +83,20 @@
     				<img class="aside" th:src="@{/static/img/parigi.jpg}">
     				<img class="aside" th:src="@{/static/img/londra.jpg}">
     				<img class="aside" th:src="@{/static/img/monaco.jpg}">
+    				<div class="row">
+                    <div class="col-10">
+                        <div class="card">
+                            <img class="card-img-top" th:src="@{/static/img/desktop-remoto.jpg}" />
+                            <div class="card-body">
+                                <h6 class="card-title1"><strong>Amministratore database</strong></h6>
+                                <p class="card-text1"> Gli ingegneri dell'affidabilità del database devono collaborare direttamente con ingegneri del software,
+                                 SRE e DevOps al fine di perseguire la nostra visione di consentire agli ingegneri di utilizzare la tecnologia giusta per il caso d'uso giusto,
+                                  utilizzare autonomamente la piattaforma delegando anche parte della gestione dei dati in un modo sicuro...</p>
+                                <a href="#" target="_blank" class="btn btn-primary">Read more</a>                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
     			</aside>
     			</div>
         </section>

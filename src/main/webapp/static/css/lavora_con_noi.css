@@ -5,13 +5,29 @@
 .aside {
     width: 200px;
     height: auto;
-    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.col-10 {
+	padding: 10px;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 #messaggio {
     resize: none;
     height: 200px;
     width: 500px;
+}
+
+.card-text1 {
+    text-align: justify !important;
+}
+
+.card {
+	background-color: white;
 }
 
 #border {
@@ -63,6 +79,7 @@ input{
 
 form {
     text-align: left;
+    padding-top: 13px;
 }
 .container{
     background-color: rgb(211, 211, 211);
