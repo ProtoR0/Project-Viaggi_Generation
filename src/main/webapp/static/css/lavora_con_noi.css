@@ -15,6 +15,12 @@
 	margin-left: auto;
     margin-right: auto;
 }
+#col-10-2 {
+	padding: 10px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
 
 #messaggio {
     resize: none;
