@@ -32,6 +32,7 @@ public class HomeController {
 		
 		model.addAttribute("recensioni", recensioni);
 		model.addAttribute("account", session.getAttribute("account") != null ? session.getAttribute("account") : null);
+		model.addAttribute("admin", session.getAttribute("admin") != null ? session.getAttribute("admin") : null);
 		
 		return "home";
 	}

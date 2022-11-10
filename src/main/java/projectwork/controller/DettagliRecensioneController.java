@@ -29,7 +29,7 @@ public class DettagliRecensioneController {
 			return "redirect:/home";
 		}
 		
-		if(recensioneService.findById(id).getPubblicato() != 1) {
+		if(recensioneService.findById(id).getPubblicato() != 1 && session.getAttribute("admin") == null) {	// se la recensione non é pubblicata ritorna alla home | se é un admin a visualizzare continua
 			return "redirect:/home";
 		}
 		

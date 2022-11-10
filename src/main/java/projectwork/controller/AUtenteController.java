@@ -36,8 +36,13 @@ public class AUtenteController {
 		if(session.getAttribute("account") != null) {
 			
 			Account account = (Account) session.getAttribute("account");
+			List<Recensione> recensioni =  recensioneService.findByAccount(account);
 			
-			model.addAttribute("recensioni", (List<Recensione>) recensioneService.findByAccount(account));
+			for (Recensione recensione : recensioni) {
+				recensione.setDurata();
+			}
+			
+			model.addAttribute("recensioni", recensioni);
 			model.addAttribute("account", account);
 			model.addAttribute("inserisciFoto", inserisciFoto != null ? true : false);
 			model.addAttribute("recensione", id != null ? recensioneService.findById(id) : new Recensione());
