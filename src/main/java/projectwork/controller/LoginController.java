@@ -39,6 +39,8 @@ public class LoginController {
 	@PostMapping
 	public String login(@RequestParam(name = "username", required = false) String username, @RequestParam(name = "password", required = false) String password,@RequestParam("tipo") String type, HttpSession session, Model model) {
 		
+		session.removeAttribute("account");
+		session.removeAttribute("admin");
 		
 		if(username != null && password != null) {
 			if(type.equals("Normale")) {										// Login per account normale
