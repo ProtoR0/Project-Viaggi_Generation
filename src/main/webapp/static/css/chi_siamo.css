@@ -3,9 +3,12 @@
 }
 
 .aside {
-    width: 200px;
+    width: 70%;
     height: auto;
-    margin: 20px;
+    padding-top: 30px;
+}
+aside{
+    padding-bottom: 30px;
 }
 
 #centro {
