@@ -36,7 +36,9 @@ public class AAdminController {
 			model.addAttribute("recensioni1", (List<Recensione>) recensioneService.findByPubblicato(1));
 			model.addAttribute("recensioni2", (List<Recensione>) recensioneService.findByPubblicato(2));
 			
-			model.addAttribute("RecensioniDaVerificare", recensioneService.findByPubblicato(0) != null ? true : null);
+			if(recensioneService.findByPubblicato(0) != null) {
+				model.addAttribute("RecensioniDaVerificare", true);
+			}
 			
 			return "area_admin";
 		}
@@ -48,5 +50,15 @@ public class AAdminController {
 	public String deleteRecensione(@RequestParam("id") int id) {
 		recensioneService.deleteRecensione(recensioneService.findById(id));
 		return "redirect:/area_utente";
+	}
+	
+	@GetMapping("/deleteUtente")
+	public String deleteUtente(@RequestParam("id") Integer id) {
+		if(id == null) {
+			return "redirect:/area_admin";
+		}
+		
+		accountService.removeAccount(accountService.findById(id));
+		return "redirect:/area_admin";
 	}
 }

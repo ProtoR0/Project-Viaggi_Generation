@@ -27,7 +27,7 @@
             </div>
         </div>
         <section>
-        	<div th:if="${RecensioniDaVerificare != null}" id="popup">
+        	<div th:if="${RecensioniDaVerificare == true}" id="popup">
         		<p>Ci sono delle recensioni che vanno controllate prima della pubblicazione! <a th:href="@{/area_admin2}">Review</a></p>
         	</div>
             <h3>Area Admin - Viaggi Utente - Lista utenti registrati</h3> 
@@ -49,7 +49,7 @@
 								<td class="align-middle" th:text="${user.email}"></td>
 								
 								<td class="align-middle text-end">
-									<a th:href="@{/area_utente/deleteUtente(id=${user.id})}" 
+									<a th:href="@{/area_admin/deleteUtente(id=${user.id})}" 
 										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
 								</td>
 							</tr>

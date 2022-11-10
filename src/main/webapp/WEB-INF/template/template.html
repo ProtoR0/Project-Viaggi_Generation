@@ -15,9 +15,6 @@
 	    max-width: none !important;
 	    background: none !important
 	  }
-	  nav{
-	  	width:100%;
-	  }
 	</style>
 </head>
 
@@ -103,7 +100,7 @@
 	            <li class="nav-item dropdown">
 			        <a class="nav-link dropdown-toggle" role="button" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
 			        th:text="${admin.username}"></a>
-			        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
 			          <li><a class="dropdown-item" th:href="@{area_admin}">Lista recensioni ed utenti</a></li>
 			          <li><a class="dropdown-item" th:href="@{area_admin2}">Review recensioni</a></li>		          
 			          <li><a class="dropdown-item" th:href="@{/login}">Esci</a></li>
