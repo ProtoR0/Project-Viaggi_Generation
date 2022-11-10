@@ -1,20 +1,26 @@
 #fotoHome{
     width: 100%;
 }
-
-.aside {
+.asideDestra{
+    padding-left: 2%;
+    padding-right: 2%;
     width: 80%;
     height: auto;
     padding: 1%;
-}
-#asideDestra{
-    padding-left: 2%;
-    padding-right: 2%;
+    margin: 2%;
 }
 
-#asideSinistra{
+.asideSinistra{
     padding-left: 2%;
     padding-right: 2%;
+    width: 80%;
+    height: auto;
+    padding: 1%;
+    margin: 2%;
+}
+aside{
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #centro {

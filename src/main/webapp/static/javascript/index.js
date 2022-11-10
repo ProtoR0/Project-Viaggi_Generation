@@ -1,9 +1,33 @@
 $(document).ready(function(){
-    $(".aside").mouseenter(function(){
-        $(this).css("width","90%")
+    $(".asideSinistra").mouseenter(function(){
+        $(this).animate({
+            right:"1px",
+            width:"90%",
+            height:"auto"
+        });
     });
-        $(".aside").mouseleave(function(){
-            $(this).css("width","80%")
+        $(".asideSinistra").mouseleave(function(){
+            $(this).animate({
+                right:"1px",
+                width:"80%",
+                height:"auto"
+            });
+    });
+
+
+    $(".asideDestra").mouseenter(function(){
+        $(this).animate({
+            left:"1px",
+            width:"90%",
+            height:"auto"
+        });
+    });
+        $(".asideDestra").mouseleave(function(){
+            $(this).animate({
+                left:"1px",
+                width:"80%",
+                height:"auto"
+            });
     });
 
 });

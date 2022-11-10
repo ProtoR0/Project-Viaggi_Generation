@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" th:href="@{/static/css/admin.css}"/>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="stylesheet" th:href="@{/static/css/admin.css}">
   	<style>
 	  #gmap_canvas img {
 	    max-width: none !important;
@@ -123,24 +123,24 @@
   <!--aside sinistra-->
   <aside class="col-3" th:fragment="asideSinistra">
     <a th:href="@{https://www.tripadvisor.it/Attractions-g187870-Activities-Venice_Veneto.html}" target="_blank"><img
-        class="aside" th:src="@{/static/img/Venezia.jpg}"></a>
+        class="asideSinistra" th:src="@{/static/img/Venezia.jpg}"></a>
     <a th:href="@{https://www.tripadvisor.it/Attractions-g187791-Activities-Rome_Lazio.html}" target="_blank"><img
-        class="aside" th:src="@{/static/img/roma.jpg}"></a>
+        class="asideSinistra" th:src="@{/static/img/roma.jpg}"></a>
     <a th:href="@{https://www.tripadvisor.it/Attractions-g187849-Activities-Milan_Lombardy.html}" target="_blank"><img
-        class="aside" th:src="@{/static/img/milano.jpg}"></a>
+        class="asideSinistra" th:src="@{/static/img/milano.jpg}"></a>
     <a th:href="@{https://www.tripadvisor.it/Attractions-g482884-Activities-Zanzibar_Island_Zanzibar_Archipelago.html}"
-      target="_blank"><img class="aside" th:src="@{/static/img/zanzibar.jpg}"></a>
+      target="_blank"><img class="asideSinistra" th:src="@{/static/img/zanzibar.jpg}"></a>
   </aside>
   <!--fine aside sinistra-->
   <!--aside Destra-->
   <aside class="col-3" th:fragment="asideDestra">
     <a th:href="@{https://www.tripadvisor.it/Attractions-g187309-Activities-Munich_Upper_Bavaria_Bavaria.html}"
-      target="_blank"><img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen"></a>
+      target="_blank"><img class="asideDestra" th:src="@{/static/img/munchen.jpg}" id="munchen"></a>
     <a th:href="@{https://www.tripadvisor.it/Attractions-g187147-Activities-Paris_Ile_de_France.html}"
-      target="_blank"><img class="aside" th:src="@{/static/img/parigi.jpg}"></a>
+      target="_blank"><img class="asideDestra" th:src="@{/static/img/parigi.jpg}"></a>
     <a th:href="@{https://www.tripadvisor.it/Attractions-g186338-Activities-London_England.html}" target="_blank"><img
-        class="aside" th:src="@{/static/img/londra.jpg}"></a>
-    <a th:href="@{https://it.hotels.com/go/germania/cose-da-fare-a-monaco}" target="_blank"><img class="aside"
+        class="asideDestra" th:src="@{/static/img/londra.jpg}"></a>
+    <a th:href="@{https://it.hotels.com/go/germania/cose-da-fare-a-monaco}" target="_blank"><img class="asideDestra"
         th:src="@{/static/img/monaco.jpg}"></a>
   </aside>
   <!--aside destra-->
