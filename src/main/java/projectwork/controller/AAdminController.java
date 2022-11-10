@@ -36,9 +36,8 @@ public class AAdminController {
 			model.addAttribute("recensioni1", (List<Recensione>) recensioneService.findByPubblicato(1));
 			model.addAttribute("recensioni2", (List<Recensione>) recensioneService.findByPubblicato(2));
 			
-			if(recensioneService.findByPubblicato(0) != null) {
-				model.addAttribute("RecensioniDaVerificare", true);
-			}
+
+			model.addAttribute("RecensioniDaVerificare", ((List<Recensione>) recensioneService.findByPubblicato(0)).size() > 0 ? true : false);
 			
 			return "area_admin";
 		}
