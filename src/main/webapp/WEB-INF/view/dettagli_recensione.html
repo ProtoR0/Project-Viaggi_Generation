@@ -44,12 +44,10 @@
                     </div>
                     <br/>
                     <div th:if="${recensione.image}" class="row">
-                    	<div th:foreach="image : ${images}">
-                    		<div class="col-1"></div>
-                    		<div class="col-3">
-	                    		<div class="image">
-	                    			<img class="img-fluid" th:src="${image}"/>
-	                    		</div>
+                    	<div class="image" th:each="img : ${images}">
+                    		<div class="col-2"></div>
+                    		<div class="col-10">
+                    			<img class="img-fluid" th:src="@{'static/fotoRecensioni/' + ${img}}"/>
                     		</div>
                     	</div>
                     </div>

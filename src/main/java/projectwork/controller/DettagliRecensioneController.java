@@ -40,15 +40,16 @@ public class DettagliRecensioneController {
 		
 		for(int cont =1; cont < 4; cont++) {
 			String rootDir = session.getServletContext().getRealPath("/");
-			String filePath = rootDir + "static\\articles\\" + id + "_" + cont + ".png";
+			String filePath = rootDir + "static\\fotoRecensioni\\" + id + "_" + cont + ".png";
 			File file = new File(filePath);
 			
 			if(file.exists()) {
-				images.add(filePath);
+				images.add(id+"_"+cont+".png");
 				recensione.setImage(true);
 			}
 			
 		}
+
 		
 		model.addAttribute("account", session.getAttribute("account") != null ? session.getAttribute("account") : null);
 		model.addAttribute("admin", session.getAttribute("admin") != null ? session.getAttribute("admin") : null);

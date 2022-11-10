@@ -55,6 +55,8 @@ textarea{
 	width: 300px;
 }
 .image{
-	width: 30%;
+	position: relative;
+	float:left;
+	width: 33%;
 	height: auto;
 }
