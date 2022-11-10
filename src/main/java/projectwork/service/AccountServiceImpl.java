@@ -35,6 +35,11 @@ public class AccountServiceImpl implements AccountService{
 		accountDao.delete(account);
 		
 	}
+
+	@Override
+	public Account findById(int id) {
+		return accountDao.findById(id).get();
+	}
 	
 	
 }
