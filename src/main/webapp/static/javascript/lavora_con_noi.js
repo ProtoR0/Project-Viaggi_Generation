@@ -18,8 +18,8 @@ $(document).ready(function(){
 
 window.addEventListener("load", sponsor);
 function sponsor (){
-let sponsor = ["/Project-Viaggi_Generation/static/img/Tripadvisor.jpg", "/Project-Viaggi_Generation/static/img/viaggi.jpg", "/Project-Viaggi_Generation/static/img/tramonto.jpg"];
+let sponsor = ["/Project-Viaggi_Generation/static/img/mare.jpg", "/Project-Viaggi_Generation/static/img/grecia.jpg", "/Project-Viaggi_Generation/static/img/woman.jpg","/Project-Viaggi_Generation/static/img/tropicalel.jpg"];
 let casuale = Math.floor(Math.random()*3);
-document.getElementById("banner").innerHTML = '<img src="' + sponsor[casuale] + '" style="width: 600px; height: 125px; border-radius: 5px;" />';
+document.getElementById("banner").innerHTML = '<img src="' + sponsor[casuale] + '" style="width: 100%; height: 125px; border-radius: 10px;" />';
 setTimeout("sponsor()", 500);
 }
