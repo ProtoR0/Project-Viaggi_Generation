@@ -58,7 +58,7 @@
                     
                 </div>
                 </form>
-                <div class="col-6">
+                <div class="col-5">
                     <table class="table table-striped table-responsive">
                     	<thead>
 							<tr>
@@ -81,9 +81,9 @@
 								
 								<td class="align-middle text-end">
 									<a th:href="@{/area_admin2(id=${r.id})}" 
-										class="btn btn-primary btn-sm small-button" th:text="#{btn.edit}"></a>
+										class="btn btn-primary btn-sm small-button m-1" th:text="#{btn.edit}"></a>
 									<a th:href="@{/area_admin/deleteRecensione(id=${r.id})}" 
-										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
+										class="btn btn-danger btn-sm small-button m-1" th:text="#{btn.delete}"></a>
 								</td>
 							</tr>
 							<tr th:each="r : ${recensioni2}">
@@ -96,14 +96,15 @@
 																
 								<td class="align-middle text-end">
 									<a th:href="@{/area_admin2(id=${r.id})}" 
-										class="btn btn-primary btn-sm small-button" th:text="#{btn.edit}"></a>
+										class="btn btn-primary btn-sm small-button m-1" th:text="#{btn.edit}"></a>
 									<a th:href="@{/area_admin/deleteRecensione(id=${r.id})}" 
-										class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
+										class="btn btn-danger btn-sm small-button m-1" th:text="#{btn.delete}"></a>
 								</td>
 							</tr>
 						</tbody>
                     </table>
                 </div>
+				<div class="col-1"></div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>

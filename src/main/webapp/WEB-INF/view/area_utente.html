@@ -31,7 +31,7 @@
         <section>
             <div class="row" id="centro">
             	<div class="col-1"></div>
-                <div class="col-4">
+                <div class="col-3">
                     <h3 th:text="'Ciao ' + ${account.username}"></h3><!--inserire variabile nome utente-->
                     <div th:if="${!inserisciFoto}">
 	                    <h5>Inserisci la tua recensione</h5>
@@ -125,6 +125,7 @@
 						</tbody>
                     </table>
                 </div>
+                <div class="col-1"></div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
