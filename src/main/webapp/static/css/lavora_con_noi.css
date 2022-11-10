@@ -10,6 +10,13 @@
     padding-top: 30px;
 }
 
+#banner {
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
 #col-10 {
 	padding: 10px;
 	margin-left: auto;
