@@ -29,9 +29,9 @@
                         <form method="POST" th:object="${recensione}">
                             <label class="form-label">Destinazione:
                                 <select name="destinazione" th:field="*{destinazione}">
-                                    <option th:value="italia">Italia</option>
-                                    <option th:value="europa">Europa</option>
-                                    <option th:value="altro">Altro</option>
+                                    <option th:value="Italia">Italia</option>
+                                    <option th:value="Europa">Europa</option>
+                                    <option th:value="Altro">Altro</option>
                                 </select></label>
                             <br />
                             <label class="form-label" for="dataInizio">Data Inizio: </label>
@@ -64,9 +64,9 @@
                     <div th:if="${inserisciFoto}">
                         <label class="form-label">Destinazione
                             <select name="destinazione" disabled>
-                                <option value="italia">Italia</option>
-                                <option value="europa">Europa</option>
-                                <option value="altro">Altro</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Europa">Europa</option>
+                                <option value="Altro">Altro</option>
                             </select></label>
                         <br />
                         <span class="text-start">
