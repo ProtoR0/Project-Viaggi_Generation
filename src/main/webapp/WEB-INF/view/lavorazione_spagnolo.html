@@ -35,5 +35,28 @@
         <footer th:replace="../template/template :: footerFragment"></footer>
     </div>
     <script th:src="@{static/javascript/in_lavorazione_sp.js}" type="text/javascript"></script>
+    <script>
+        function zero(numero) {
+    if (numero<10) {
+        numero = "0" + numero;
+    }
+
+    return numero;
+}
+window.addEventListener("load", data);
+function data() {
+
+    let data = new Date();
+
+    let ora = zero(data.getHours());
+    let minuti = zero(data.getMinutes());
+    let secondi = zero(data.getSeconds());
+
+document.getElementById("orologio").innerHTML = (ora + ":" + minuti + ":" + secondi);
+setTimeout("data()", 1000);
+
+}
+
+    </script>
 </body>
 </html>
