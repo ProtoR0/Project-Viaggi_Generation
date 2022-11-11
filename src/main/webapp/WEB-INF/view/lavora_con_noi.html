@@ -1,122 +1,133 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lavora con noi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"/>
-    <link rel="stylesheet" th:href="@{/static/css/lavora_con_noi.css}"/>
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" th:href="@{/static/css/lavora_con_noi.css}" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="container p-0">
-        <header>
-            <div class="row">
-                <header class="col-12" th:replace="../template/template :: header"></header>
-            </div>
-        </header>
-        <div class="row" id="menu">
-            <!--Menu-->
-            <div class="col-12" id="menu">
-                <nav th:replace="../template/template :: navFragment"></nav>
-            </div>
-        </div>
+        <header class="col-12" th:replace="../template/template :: header"></header>
+        <nav th:replace="../template/template :: navFragment"></nav>
         <section>
             <div class="row">
-                <aside class="col-3"> 
-               		<img class="aside" th:src="@{/static/img/Venezia.jpg}"/>   				
-    				<img class="aside" th:src="@{/static/img/roma.jpg}"/>
-    				<img class="aside" th:src="@{/static/img/milano.jpg}"/>
-   					<img class="aside" th:src="@{/static/img/zanzibar.jpg}"/>   					
-   					<div class="row">
-                    <div class="col-10" id="col-10">
-                        <div class="card">
-                            <img class="card-img-top" th:src="@{/static/img/leggere.jpg}" />
-                            <div class="card-body">
-                                <h6 class="card-title1"><strong>Addetto alla revisione</strong></h6>
-                                <p class="card-text1"> Gli addetti alla revisione devono fornire un'eccellente esperienza del cliente, rispondere alle recensioni online dei clienti
-                                cercando di evitare che recensioni non coerenti con i principi dell'azienda possano essere pubblicati, si deve assicurare che la recensione del cliente 
-                                sia online e che sia visibile...</p>
-                                <a href="#" target="_blank" class="btn btn-primary">Read more</a>                     
+                <aside class="col-3">
+                    <img class="aside" th:src="@{/static/img/Venezia.jpg}" />
+                    <img class="aside" th:src="@{/static/img/roma.jpg}" />
+                    <img class="aside" th:src="@{/static/img/milano.jpg}" />
+                    <img class="aside" th:src="@{/static/img/zanzibar.jpg}" />
+                    <div class="row">
+                        <div class="col-10" id="col-10">
+                            <div class="card">
+                                <img class="card-img-top" th:src="@{/static/img/leggere.jpg}" />
+                                <div class="card-body">
+                                    <h6 class="card-title1"><strong>Addetto alla revisione</strong></h6>
+                                    <p class="card-text1"> Gli addetti alla revisione devono fornire un'eccellente
+                                        esperienza del cliente, rispondere alle recensioni online dei clienti
+                                        cercando di evitare che recensioni non coerenti con i principi dell'azienda
+                                        possano essere pubblicati, si deve assicurare che la recensione del cliente
+                                        sia online e che sia visibile...</p>
+                                    <a href="#" target="_blank" class="btn btn-primary">Read more</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-  				</aside>
+                </aside>
                 <div class="col-6" id="centro">
-                 <h1><strong>Lavora con noi</strong></h1>
-                 <p style="text-align: justify">
-                 Siamo un team di persone affiatate, sempre pronte a dare il massimo per la buona riuscita delle nostre iniziative, 
-                 stiamo cercando persone talentuose e dinamiche, pronte ad unirsi al nostro team per raggiungere obiettivi sempre più ambiziosi. <br />
-                 <strong> Sei talentuoso e dinamico? Sei ambizioso? Sei pronto ad affrontare sfide? </strong><br /> 
-                 Entra a far pare del team Viaggi Generation e metti in gioco le tue capacità in un'azienda giovane, stimolante e sempre in crescita. <br /> 
-                 Cerca tra i profili lavorativi quello che più si adatta alle tue esperienze e ai tuoi obiettivi professionali 
-                 ed invia il tuo CV compilando il form qui sotto indicando nel messaggio la posizione per cui desideri candidarti.
-                 </p>        
-	                 <form method="POST">
-	                    <fieldset class="border p-2" id="border">
-	                    <h3><strong>Inserisci la tua candidatura</strong></h3>
-	                    	<label class="form-label"><strong>Nome</strong></label> 
-	                    	<input type="text" id="nome" placeholder="Inserisci nome" class="form-control"><br />
-                            <label class="form-label"><strong>Cognome</strong></label> 
-	                    	<input type="text" id="cognome" placeholder="Inserisci cognome" class="form-control">
-	                        <br/>
-	                        <label class="form-label"><strong>Numero di telefono</strong></label>
-	                    	<input type="text" id="telefono" placeholder="Inserisci numero di telefono" class="form-control"><br />                        
-                       		<label for="email" ><strong>Email</strong></label>
-                            <input type="text" id="email" placeholder="Inserisci email" class="form-control"><br/>         
+                    <h1><strong>Lavora con noi</strong></h1>
+                    <p style="text-align: justify">
+                        Siamo un team di persone affiatate, sempre pronte a dare il massimo per la buona riuscita delle
+                        nostre iniziative,
+                        stiamo cercando persone talentuose e dinamiche, pronte ad unirsi al nostro team per raggiungere
+                        obiettivi sempre più ambiziosi. <br />
+                        <strong> Sei talentuoso e dinamico? Sei ambizioso? Sei pronto ad affrontare sfide?
+                        </strong><br />
+                        Entra a far pare del team Viaggi Generation e metti in gioco le tue capacità in un'azienda
+                        giovane, stimolante e sempre in crescita. <br />
+                        Cerca tra i profili lavorativi quello che più si adatta alle tue esperienze e ai tuoi obiettivi
+                        professionali
+                        ed invia il tuo CV compilando il form qui sotto indicando nel messaggio la posizione per cui
+                        desideri candidarti.
+                    </p>
+                    <form method="POST">
+                        <fieldset class="border p-2" id="border">
+                            <h3><strong>Inserisci la tua candidatura</strong></h3>
+                            <label class="form-label"><strong>Nome</strong></label>
+                            <input type="text" id="nome" placeholder="Inserisci nome" class="form-control"><br />
+                            <label class="form-label"><strong>Cognome</strong></label>
+                            <input type="text" id="cognome" placeholder="Inserisci cognome" class="form-control">
+                            <br />
+                            <label class="form-label"><strong>Numero di telefono</strong></label>
+                            <input type="text" id="telefono" placeholder="Inserisci numero di telefono"
+                                class="form-control"><br />
+                            <label for="email"><strong>Email</strong></label>
+                            <input type="text" id="email" placeholder="Inserisci email" class="form-control"><br />
                             <label class="form-label"><strong>Messaggio</strong></label>
-                            <textarea id="messaggio" placeholder="Inserisci messaggio" class="form-control" ></textarea><br/>                        
-                            <label class="form-label"><strong>Allega il tuo CV</strong></label><br /> 
-                            <input type="file" id="curriculum" class="form-control" style="width: 500px;"/><br />  
-                            <input type="button" id="invia" class="btn btn-primary small-button" value="Invia" style="margin-left: 230px;" />
+                            <textarea id="messaggio" placeholder="Inserisci messaggio"
+                                class="form-control"></textarea><br />
+                            <label class="form-label"><strong>Allega il tuo CV</strong></label><br />
+                            <input type="file" id="curriculum" class="form-control" style="width: 500px;" /><br />
+                            <input type="button" id="invia" class="btn btn-primary small-button" value="Invia"
+                                style="margin-left: 230px;" />
                             <input type="reset" id="reset" class="btn btn-primary small-button" value="Ripristina" />
-                            
-                         </fieldset>                   
-	                  </form> 
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
- 					 <div class="carousel-inner">
-    				<div class="carousel-item active">
-      					<img src="/Project-Viaggi_Generation/static/img/grecia.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 125px; border-radius: 10px;">
-    				</div>
-    				<div class="carousel-item">
-      					<img src="/Project-Viaggi_Generation/static/img/woman.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 125px; border-radius: 10px;">
-    				</div>
-   					 <div class="carousel-item">
-      					<img src=/Project-Viaggi_Generation/static/img/tropicalel.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 125px; border-radius: 10px;">
-    				</div>
-  					</div> 
-  				</div>    
+
+                        </fieldset>
+                    </form>
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/Project-Viaggi_Generation/static/img/grecia.jpg" class="d-block w-100"
+                                    alt="..." style="width: 100%; height: 125px; border-radius: 10px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/Project-Viaggi_Generation/static/img/woman.jpg" class="d-block w-100"
+                                    alt="..." style="width: 100%; height: 125px; border-radius: 10px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/Project-Viaggi_Generation/static/img/tropicalel.jpg" class="d-block w-100"
+                                    alt="..." style="width: 100%; height: 125px; border-radius: 10px;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <aside class="col-3">
-                    <img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen"/>
-    				<img class="aside" th:src="@{/static/img/parigi.jpg}"/>
-    				<img class="aside" th:src="@{/static/img/londra.jpg}"/>
-    				<img class="aside" th:src="@{/static/img/monaco.jpg}"/>
-    				<div class="row">
-                    <div class="col-10" id="col-10-2">
-                        <div class="card">
-                            <img class="card-img-top" th:src="@{/static/img/desktop-remoto.jpg}" />
-                            <div class="card-body">
-                                <h6 class="card-title1"><strong>Amministratore database</strong></h6>
-                                <p class="card-text1"> Gli ingegneri dell'affidabilità del database devono collaborare direttamente con ingegneri del software,
-                                 SRE e DevOps al fine di perseguire la nostra visione di consentire agli ingegneri di utilizzare la tecnologia giusta per il caso d'uso giusto,
-                                  utilizzare autonomamente la piattaforma delegando anche parte della gestione dei dati in un modo sicuro...</p>
-                                <a href="#" target="_blank" class="btn btn-primary">Read more</a>                     
+                    <img class="aside" th:src="@{/static/img/munchen.jpg}" id="munchen" />
+                    <img class="aside" th:src="@{/static/img/parigi.jpg}" />
+                    <img class="aside" th:src="@{/static/img/londra.jpg}" />
+                    <img class="aside" th:src="@{/static/img/monaco.jpg}" />
+                    <div class="row">
+                        <div class="col-10" id="col-10-2">
+                            <div class="card">
+                                <img class="card-img-top" th:src="@{/static/img/desktop-remoto.jpg}" />
+                                <div class="card-body">
+                                    <h6 class="card-title1"><strong>Amministratore database</strong></h6>
+                                    <p class="card-text1"> Gli ingegneri dell'affidabilità del database devono
+                                        collaborare direttamente con ingegneri del software,
+                                        SRE e DevOps al fine di perseguire la nostra visione di consentire agli
+                                        ingegneri di utilizzare la tecnologia giusta per il caso d'uso giusto,
+                                        utilizzare autonomamente la piattaforma delegando anche parte della gestione dei
+                                        dati in un modo sicuro...</p>
+                                    <a href="#" target="_blank" class="btn btn-primary">Read more</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-    			</aside>
-    			</div>
+                </aside>
+            </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
         <script th:src="@{static/javascript/lavora_con_noi.js}" type="text/javascript"></script>
     </div>
 </body>
+
 </html>
