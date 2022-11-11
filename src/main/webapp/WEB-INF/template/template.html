@@ -28,91 +28,100 @@
   <div class="row" id="menu1">     <!--Menu-->
     <div class="col-12" id="menu3">
         <div class="dropdown  justify-content-center">   
-    <nav th:fragment="navFragment" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-
-        <a class="navbar-brand" th:href="@{/home}" id="home2">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
-          aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="col-10">
-          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown6">
-
-            <ul class="navbar-nav">
+          <nav th:fragment="navFragment" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+        
+              <a class="navbar-brand" th:href="@{/home}" id="home2">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+                aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="col-5">
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown6">
+        
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" th:href="@{/home(destinazione=italia)}" role="button">
+                        Italia
+                      </a>
+                    </li>
+        
+                    <li class="nav-item">
+                      <a class="nav-link" th:href="@{/home(destinazione=europa)}" role="button">
+                        Europa
+                      </a>
+                    </li>
+        
+                    <li class="nav-item">
+                      <a class="nav-link" th:href="@{/home(destinazione=altro)}" role="button">
+                        Altro
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>     
+              <div class="col-5 text-start">
+              <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" th:href="@{/home(destinazione=italia)}" role="button">
-                  Italia
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" th:href="@{/home(destinazione=europa)}" role="button">
-                  Europa
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" th:href="@{/home(destinazione=altro)}" role="button">
-                  Altro
+                <a class="nav-link" id="orologio">
+                  
                 </a>
               </li>
             </ul>
-          </div>
-        </div>       
-     	<div th:if="${account} == null AND ${admin} == null" class="col-2 text-end">
-			<ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" th:href="@{/login}" role="button">
-                Login
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" th:href="@{/registrazione}" role="button">
-                Registrati
-              </a>
-            </li>
-          </ul>
-        </div>
-                
-
-        <div th:if="${account} != null" class="col-2 text-end">
-        <div class="dropdown">
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-			<ul class="navbar-nav">
-				<li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" role="button" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target="#ddAccount">
-		          <span th:text="${account.username}"></span>
-		        </a>
-		        <ul class="dropdown-menu dropdown-menu-dark" id="ddAccount" aria-labelledby="navbarDropdown">
-		          <li><a class="dropdown-item" th:href="@{/area_utente}">Recensioni</a></li>
-		          <li><a class="dropdown-item" th:href="@{/login}">Esci</a></li>
-		        </ul>
-		      </li>
-        	</ul>
-        </div>
-       </div>
-      </div>
-       <div th:if="${admin} != null" class="col-2 text-end">
-        <div class="dropdown">
-			<ul class="navbar-nav">
-	            <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" role="button" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
-			        th:text="${admin.username}"></a>
-			        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
-			          <li><a class="dropdown-item" th:href="@{area_admin}">Lista recensioni ed utenti</a></li>
-			          <li><a class="dropdown-item" th:href="@{area_admin2}">Review recensioni</a></li>		          
-			          <li><a class="dropdown-item" th:href="@{/login}">Esci</a></li>
-			        </ul>
-				</li>
-        	</ul>
-      </div> 
-      </div> 
-
-  
-    </div>  
-    </nav>
+              </div>  
+             <div th:if="${account} == null AND ${admin} == null" class="col-2 text-end">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}" role="button">
+                      Login
+                    </a>
+                  </li>
+        
+                  <li class="nav-item">
+                    <a class="nav-link" th:href="@{/registrazione}" role="button">
+                      Registrati
+                    </a>
+                  </li>
+                </ul>
+              </div>
+                      
+        
+              <div th:if="${account} != null" class="col-2 text-end">
+              <div class="dropdown">
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" role="button" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target="#ddAccount">
+                    <span th:text="${account.username}"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" id="ddAccount" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" th:href="@{/area_utente}">Recensioni</a></li>
+                    <li><a class="dropdown-item" th:href="@{/login}">Esci</a></li>
+                  </ul>
+                </li>
+                </ul>
+              </div>
+             </div>
+            </div>
+             <div th:if="${admin} != null" class="col-2 text-end">
+              <div class="dropdown">
+            <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                    th:text="${admin.username}"></a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" th:href="@{area_admin}">Lista recensioni ed utenti</a></li>
+                      <li><a class="dropdown-item" th:href="@{area_admin2}">Review recensioni</a></li>		          
+                      <li><a class="dropdown-item" th:href="@{/login}">Esci</a></li>
+                    </ul>
+              </li>
+                </ul>
+            </div> 
+            </div> 
+        
+        
+          </div>  
+          </nav>
   </div>
 </div>
 </div>
@@ -155,7 +164,7 @@
       <div class="col-1"></div>
       <div class="col-4 text-center">
         <h5>Mappa</h5>
-        <div style="width: 400px;position: relative; padding-top: 10px;">
+        <div style="width: 400px;position: relative; padding-top: 10px; margin-left: auto; margin-right: auto;">
           <iframe class="text-justify" width="300" height="200"
             src="https://maps.google.com/maps?width=400&amp;height=200&amp;hl=en&amp;q=Via%20S.%20Martino%20della%20Battaglia%20Roma+(Viaggi%20Generation)&amp;ie=UTF8&amp;t=k&amp;z=16&amp;iwloc=B&amp;output=embed"
             frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
