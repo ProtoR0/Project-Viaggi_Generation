@@ -52,7 +52,7 @@ textarea{
     background-color: rgb(211, 211, 211);
 }
 #foto{
-	width: 300px;
+	width: 100%;
 }
 .image{
 	position: relative;

@@ -17,11 +17,11 @@
 
 <body>
     <div class="container p-0">
-        <header>
+        
             <div class="row">
                 <header class="col-12" th:replace="../template/template :: header"></header>
             </div>
-        </header>
+        
         <nav th:replace="../template/template :: navFragment"></nav>
         <section>
             <div class="row">
@@ -48,7 +48,7 @@
 						<label for="tipo1"> Normale</label>
 						<input type="radio" id="tipo2" name="tipo" value="Admin" required>
 						<label for="tipo2"> Admin</label><br/>
-                        
+                        <br >
                         <input type="Submit" class="btn btn-primary small-button" th:value="#{btn.login}"> &nbsp; &nbsp;<span> Non hai un account? <a th:href="@{/registrazione}"> Registrati qui! </a></span>
                     </form>
                     <br/>

@@ -23,6 +23,7 @@ function zero(numero) {
 
     return numero;
 }
+
 window.addEventListener("load", data);
 function data() {
 
