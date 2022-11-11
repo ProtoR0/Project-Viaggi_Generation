@@ -32,8 +32,8 @@
         		<p>Ci sono delle recensioni che vanno controllate prima della pubblicazione! <a th:href="@{/area_admin2}">Review</a></p>
         	</div>
             <h3>Area Admin - Viaggi Utente - Lista utenti registrati</h3> 
-            <div class="row">
-                <div class="col-1"></div>
+            <div class="row p-3">
+                
                 <div class="col-5" id="centroAdmin">
 
                     <table class="table table-striped table-responsive">
@@ -58,8 +58,7 @@
                     </table>
                     
                 </div>
-                </form>
-                <div class="col-5">
+                <div class="col-7">
                     <table class="table table-striped table-responsive">
                     	<thead>
 							<tr>
@@ -73,7 +72,7 @@
 						</thead>
 						<tbody>
 							<tr th:each="r : ${recensioni1}">
-								<td th:text="#{label.stato.Pubblicato}"></td>
+								<td th:text="#{label.stato.Pubblicato}" class="align-middle"></td>
 						
 								<td class="align-middle" th:text="${r.titolo}"></td>
 								<td class="align-middle" th:text="${r.destinazione}"></td>
@@ -88,7 +87,7 @@
 								</td>
 							</tr>
 							<tr th:each="r : ${recensioni2}">
-								<td th:if="${r.pubblicato} == 2" th:text="#{label.stato.NonPubblicato}"></td>
+								<td th:if="${r.pubblicato} == 2" th:text="#{label.stato.NonPubblicato}" class="align-middle"></td>
 						
 								<td class="align-middle" th:text="${r.titolo}"></td>
 								<td class="align-middle" th:text="${r.destinazione}"></td>
@@ -105,7 +104,6 @@
 						</tbody>
                     </table>
                 </div>
-				<div class="col-1"></div>
             </div>
         </section>
         <footer th:replace="../template/template :: footerFragment"></footer>
