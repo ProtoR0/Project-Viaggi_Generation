@@ -35,7 +35,7 @@ aside{
     width: 50px;
 }
 #footer{
-    background-color: rgb(40, 39, 39);
+    background: linear-gradient(to top, #282727 0%, #606060 100%);
     color: white;
     padding: 20px;
 }
@@ -55,7 +55,7 @@ form {
     text-align: center;
 }
 .container{
-    background-color: rgb(211, 211, 211);
+    background: linear-gradient(to top, #b9b9b9 0%, #e5e5e5 100%);
 }
 
 #popup{

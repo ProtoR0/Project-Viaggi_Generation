@@ -33,7 +33,7 @@ aside{
 }
 
 #footer{
-    background-color: rgb(40, 39, 39);
+    background: linear-gradient(to top, #282727 0%, #606060 100%);
     color: white;
     padding: 20px;
 }
@@ -50,5 +50,5 @@ form {
     text-align: left;
 }
 .container{
-    background-color: rgb(211, 211, 211);
+    background: linear-gradient(to top, #b5b5b5 0%, #e5e5e5 100%);
 }
