@@ -37,3 +37,9 @@ span{
 .container{
     background-color: rgb(211, 211, 211);
 }
+#popup{
+	width: auto;
+	height: auto;
+	background-color: rgba(255, 0, 0, 0.7);
+    vertical-align: middle;
+}

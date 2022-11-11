@@ -26,7 +26,12 @@ public class LoginController {
 	private AdminService adminService;
 
 	@GetMapping
-	public String getPage(HttpSession session) {
+	public String getPage(@RequestParam(name = "newAccount", required = false) Integer newAccount, HttpSession session, Model model) {
+		
+		if(newAccount != null) {
+			model.addAttribute("email", true);
+		}
+		
 		if(session.getAttribute("account") != null) {
 			session.removeAttribute("account");
 		}
