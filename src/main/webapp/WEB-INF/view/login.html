@@ -26,7 +26,10 @@
         <section>
             <div class="row">
                 <aside class="col-4"></aside><!--asideSinistra-->
-                <div class="col-4" id="centro">                 
+                <div class="col-4" id="centro">
+                	<div th:if="${email}" class="row rounded-3" id="popup">
+                		É stata inviata una email per la registrazione, confermare la email.
+                	</div>                 
                     <form action="login" method="POST" autocomplete="on"><!--login-->
                         <h3>Login</h3>
                         <hr>

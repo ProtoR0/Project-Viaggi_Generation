@@ -47,6 +47,6 @@ public class RegistrazioneController {
 		
 		accountService.saveAccount(account);
 		
-		return "redirect:/login";
+		return "redirect:/login?newAccount=1";
 	}
 }
