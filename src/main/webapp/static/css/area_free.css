@@ -7,8 +7,9 @@
     padding-right: 2%;
     width: 80%;
     height: auto;
-    padding: 1%;
-    margin: 2%;
+    padding: 0%;
+    margin: 3%;
+    transition: box-shadow 1s;
 }
 
 .asideSinistra{
@@ -16,8 +17,9 @@
     padding-right: 2%;
     width: 80%;
     height: auto;
-    padding: 1%;
-    margin: 2%;
+    padding: 0%;
+    margin: 3%;
+    transition: box-shadow 1s;
 }
 aside{
     padding-top: 2%;
