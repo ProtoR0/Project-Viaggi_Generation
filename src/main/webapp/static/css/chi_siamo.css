@@ -5,7 +5,8 @@
 .aside {
     width: 70%;
     height: auto;
-    padding-top: 35px;
+    margin-top: 35px;
+    transition: box-shadow 1s;
 }
 aside{
     padding-bottom: 30px;

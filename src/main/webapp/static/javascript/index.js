@@ -3,14 +3,22 @@ $(document).ready(function(){
         $(this).animate({
             right:"1px",
             width:"90%",
-            height:"auto"
+            height:"auto",
         });
+        $(this).css({
+            "box-shadow":  "10px  10px 5px #a9a9a9, -10px -10px 5px #a9a9a9, 10px -10px 5px #a9a9a9, -10px  10px 5px #a9a9a9"
+        });
+    });
+
     });
         $(".asideSinistra").mouseleave(function(){
             $(this).animate({
                 right:"1px",
                 width:"80%",
-                height:"auto"
+                height:"auto",
+            });
+            $(this).css({
+                "box-shadow":  "0px  0px 0px #a9a9a9, 0px 0px 0px #a9a9a9, 0px -0px 0px #a9a9a9, -0px  0px 0px #a9a9a9"
             });
     });
 
@@ -21,6 +29,9 @@ $(document).ready(function(){
             width:"90%",
             height:"auto"
         });
+        $(this).css({
+            "box-shadow":  "10px  10px 5px #a9a9a9, -10px -10px 5px #a9a9a9, 10px -10px 5px #a9a9a9, -10px  10px 5px #a9a9a9"
+        });
     });
         $(".asideDestra").mouseleave(function(){
             $(this).animate({
@@ -28,9 +39,11 @@ $(document).ready(function(){
                 width:"80%",
                 height:"auto"
             });
+            $(this).css({
+                "box-shadow":  "0px  0px 0px #a9a9a9, 0px 0px 0px #a9a9a9, 0px -0px 0px #a9a9a9, -0px  0px 0px #a9a9a9"
+            });
     });
 
-});
 
 
 function zero(numero) {

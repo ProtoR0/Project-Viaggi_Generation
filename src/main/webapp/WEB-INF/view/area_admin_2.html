@@ -13,6 +13,11 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+    	p {
+    		margin-bottom: 1px;
+    	}
+    </style>
 </head>
 
 <body>
@@ -20,23 +25,23 @@
         <header th:replace="../template/template :: header"></header>
         <nav th:replace="../template/template :: navFragment"></nav>
         <section>
-            <div class="row p-2">
-                <div class="col-1"></div>
-                <div class="col-3 text-start">
+            <div class="row p-3">
+            <div class="col-1"></div>
+                <div class="col-3 text-start p-1">
                     <h3>Area Admin</h3>
 
-                    <p><Strong>Titolo: </Strong> </p> <span th:text="${recensione.titolo}"></span><br>
+                    <p><Strong>Titolo: </Strong> </p> <p th:text="${recensione.titolo}"></p><br />
 
-                    <p><Strong>Destinazione: </Strong> </p> <span th:text="${recensione.destinazione}"></span><br>
+                    <p><Strong>Destinazione: </Strong> </p> <p th:text="${recensione.destinazione}"></p><br />
 
                     <p><Strong>Descrizione: </Strong> </p>
 
-                    <p th:text="${recensione.descrizione}"></p>
+                    <p th:text="${recensione.descrizione}"></p><br />
 
                     <!--  Aggiungere parte foto -->
                     <form method="GET" action="area_admin2/cambioStato">
 
-                        <label for="checkbox">Pubblicare: </label><br />
+                        <label for="checkbox"><strong>Pubblicare: </strong></label><br />
                         <div th:if="${recensione.pubblicato == 0}">
                             <input type="radio" id="pubblicare" name="pubblicare" value="Pubblicare" required>
                             <label for="pubblicare">Si</label><br>
@@ -60,13 +65,13 @@
                         </div>
 
 
-                        <input type="submit" class="btn btn-primary" /><!-- conferma invio pubblicazione -->
+                        <input type="submit" class="btn btn-primary mt-3" /><!-- conferma invio pubblicazione -->
                         <br>
                         <br>
                     </form>
                 </div>
-                <div class="col-7" id="centroAdmin">
-                    <table class="table table-striped table-responsive">
+                <div class="col-8 table-responsive" id="centroAdmin">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th th:text="#{label.titolo}"></th>
