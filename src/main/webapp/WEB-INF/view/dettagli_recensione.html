@@ -38,7 +38,11 @@
                     		<span th:text="${recensione.durata} + ' giorni'"></span>
                     	</div>
                     	<div class="col-4">
-                    		<span th:text="'Dal: ' + ${recensione.dataInizio} + ' al ' + ${recensione.dataFine}"></span>
+							Dal: 
+                    		<span th:text="${#temporals.format(recensione.dataInizio, 'dd-MM-yyyy')}"></span>
+                    		al
+                    		<span th:text="${#temporals.format(recensione.dataFine, 'dd-MM-yyyy')}"></span>
+                    		
                     	</div>
                     </div>
                     <br/>

@@ -33,6 +33,7 @@ public class AUtenteController {
 	
 	@GetMapping
 	public String getPage(Model model, HttpSession session, @RequestParam(name = "id", required = false) Integer id, @RequestParam(name = "if", required = false) Boolean inserisciFoto) {
+		session.removeAttribute("id_recensione");
 		if(session.getAttribute("account") != null) {
 			
 			Account account = (Account) session.getAttribute("account");
@@ -45,7 +46,13 @@ public class AUtenteController {
 			model.addAttribute("recensioni", recensioni);
 			model.addAttribute("account", account);
 			model.addAttribute("inserisciFoto", inserisciFoto != null ? true : false);
-			model.addAttribute("recensione", id != null ? recensioneService.findById(id) : new Recensione());
+			if(id != null) {
+				model.addAttribute("recensione", recensioneService.findById(id));
+				session.setAttribute("id_recensione", id);
+			}else {
+				model.addAttribute("recensione", new Recensione());
+			}
+			
 			
 			return "area_utente";
 		}
@@ -59,7 +66,9 @@ public class AUtenteController {
 			recensione.setPubblicato(0);
 			recensione.setAccount((Account) session.getAttribute("account"));
 			recensioneService.saveRecensione(recensione);
-			session.setAttribute("id_recensione", recensioneService.maxId());
+			if(session.getAttribute("id_recensione") == null) {
+				session.setAttribute("id_recensione", recensioneService.maxId());
+			}
 			return "redirect:/area_utente?id=" + session.getAttribute("id_recensione") + "&if=true";
 		}
 		
@@ -102,6 +111,7 @@ public class AUtenteController {
 	        
 		}
 		
+		session.removeAttribute("id_recensione");
 		return "redirect:/area_utente";
 	}
 	
