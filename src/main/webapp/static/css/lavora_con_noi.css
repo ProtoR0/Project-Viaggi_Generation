@@ -35,7 +35,7 @@
 #messaggio {
     resize: none;
     height: 200px;
-    width: 500px;
+    width: 100%;
 }
 
 .card-text1 {
@@ -56,19 +56,19 @@
 }
 
 #nome {
-	width: 500px;
+	width: 100%;
 }
 
 #cognome {
-	width: 500px;
+	width: 100%;
 }
 
 #telefono {
-    width: 500px;
+    width: 100%;
 }
 
 #email {
-    width: 500px;
+    width: 100%;
 }
 
 #centro {

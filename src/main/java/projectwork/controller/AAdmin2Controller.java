@@ -28,6 +28,11 @@ public class AAdmin2Controller {
 			if(recensioneService.findByPubblicato(0) != null) {
 				model.addAttribute("admin", session.getAttribute("admin"));
 				List<Recensione> recensioni = recensioneService.findByPubblicato(0);
+				
+				for (Recensione recensione : recensioni) {
+					recensione.setDurata();
+				}
+				
 				model.addAttribute("recensioni", recensioni);
 				if(id != null) {
 					model.addAttribute("recensione", recensioneService.findRecensioneInListById(recensioni, id) != null ? recensioneService.findRecensioneInListById(recensioni, id) : recensioneService.findById(id));	
