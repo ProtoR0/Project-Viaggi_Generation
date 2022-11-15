@@ -108,9 +108,9 @@
                         </thead>
                         <tbody>
                             <tr th:each="r : ${recensioni}">
-                                <td th:if="${r.pubblicato} == 0" th:text="#{label.stato.InReview}"></td>
-                                <td th:if="${r.pubblicato} == 1" th:text="#{label.stato.Pubblicato}"></td>
-                                <td th:if="${r.pubblicato} == 2" th:text="#{label.stato.NonPubblicato}"></td>
+                                <td class="align-middle" th:if="${r.pubblicato} == 0" th:text="#{label.stato.InReview}"></td>
+                                <td class="align-middle" th:if="${r.pubblicato} == 1" th:text="#{label.stato.Pubblicato}"></td>
+                                <td class="align-middle" th:if="${r.pubblicato} == 2" th:text="#{label.stato.NonPubblicato}"></td>
 
                                 <td class="align-middle" th:text="${r.titolo}"></td>
                                 <td class="align-middle" th:text="${r.destinazione}"></td>
