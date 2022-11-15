@@ -33,8 +33,17 @@ public class AAdminController {
 			model.addAttribute("admin", session.getAttribute("admin"));
 	
 			model.addAttribute("utenti", (List<Account>) accountService.findAll());
-			model.addAttribute("recensioni1", (List<Recensione>) recensioneService.findByPubblicato(1));
-			model.addAttribute("recensioni2", (List<Recensione>) recensioneService.findByPubblicato(2));
+			List<Recensione> recensioni =(List<Recensione>) recensioneService.findByPubblicato(1);
+			for (Recensione recensione : recensioni) {
+				recensione.setDurata();
+			}
+			model.addAttribute("recensioni1", recensioni);
+			recensioni = (List<Recensione>) recensioneService.findByPubblicato(2);
+			
+			for (Recensione recensione : recensioni) {
+				recensione.setDurata();
+			}
+			model.addAttribute("recensioni2", recensioni);
 			
 
 			model.addAttribute("RecensioniDaVerificare", ((List<Recensione>) recensioneService.findByPubblicato(0)).size() > 0 ? true : false);
