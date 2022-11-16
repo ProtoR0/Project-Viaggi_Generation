@@ -132,17 +132,40 @@
         <script th:src="@{/static/javascript/area_utente.js}"></script>
         <script>
 
-            document.getElementById("dataInizio").onchange = function () {
-                var input = document.getElementById("dataFine");
-                input.setAttribute("min", this.value);
+            $(document).ready(function(){
+                let data = new Date();
 
-            };
+                let giorno = data.getDate();
+                let mese = data.getMonth()+1;
+                let anno = data.getFullYear();
 
-            document.getElementById("dataFine").onchange = function () {
-                var input = document.getElementById("dataInizio");
-                input.setAttribute("max", this.value);
+                if(giorno < 10){
+                    giorno = "0" + giorno;
+                }
 
-            };
+                if(mese < 10){
+                    mese = "0" + mese;
+                }
+
+                let now = anno + "-" + mese + "-" + giorno;
+
+                document.getElementById("dataInizio").setAttribute("max", now);
+                document.getElementById("dataFine").setAttribute("max", now);
+                
+
+                document.getElementById("dataInizio").onchange = function () {
+                    var input = document.getElementById("dataFine");
+                    input.setAttribute("min", this.value);
+                    input.setAttribute("max", now);
+
+                };
+
+                document.getElementById("dataFine").onchange = function () {
+                    var input = document.getElementById("dataInizio");
+                    input.setAttribute("max", this.value);
+
+                };
+            });
 
         </script>
     </div>
