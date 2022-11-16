@@ -114,10 +114,5 @@ public class AUtenteController {
 		session.removeAttribute("id_recensione");
 		return "redirect:/area_utente";
 	}
-	
-	@GetMapping("/delete")
-	public String deleteRecensione(@RequestParam("id") int id) {
-		recensioneService.deleteRecensione(recensioneService.findById(id));
-		return "redirect:/area_utente";
-	}
+
 }

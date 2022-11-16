@@ -119,8 +119,8 @@
                                 <td class="align-middle text-end">
                                     <a th:href="@{/area_utente(id=${r.id})}" class="btn btn-primary btn-sm small-button m-1"
                                         th:text="#{btn.edit}"></a>
-                                    <a th:href="@{/area_utente/delete(id=${r.id}, type='article')}"
-                                        class="btn btn-danger btn-sm small-button m-1" th:text="#{btn.delete}"></a>
+									<a th:href="@{/deleteconfirm(id=${r.id}, type='recensione')}" class="btn btn-danger btn-sm small-button" 
+										th:text="#{btn.delete}"></a>
                                 </td>
                             </tr>
                         </tbody>

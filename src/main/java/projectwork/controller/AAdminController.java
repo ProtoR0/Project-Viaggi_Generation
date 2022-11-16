@@ -53,20 +53,5 @@ public class AAdminController {
 		
 		return "redirect:/home";
 	}
-	
-	@GetMapping("/deleteRecensione")
-	public String deleteRecensione(@RequestParam("id") int id) {
-		recensioneService.deleteRecensione(recensioneService.findById(id));
-		return "redirect:/area_utente";
-	}
-	
-	@GetMapping("/deleteUtente")
-	public String deleteUtente(@RequestParam("id") Integer id) {
-		if(id == null) {
-			return "redirect:/area_admin";
-		}
-		
-		accountService.removeAccount(accountService.findById(id));
-		return "redirect:/area_admin";
-	}
+
 }

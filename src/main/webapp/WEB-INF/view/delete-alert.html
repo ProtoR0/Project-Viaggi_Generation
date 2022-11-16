@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <title>Delete</title>
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" th:href="@{/static/css/area_utente.css}" />
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+	<body class="bg-light">
+		<div class="container">
+			<div class="row justify-content-center mt-4">
+				<div class="col-4 p-4 bg-white" style="border-style:outset;border-width:2px;">
+					<div class="row">
+						<div class="col-12 text-center">
+							<img class="img-circle" th:src="@{static/img/alertImage.png}" alt="alert" 
+								style="width:100px;max-width:100px;height:100px;max-height:100px;">
+							<h5 th:text="#{label.itemdeleteconfirm}"></h5>
+						</div>
+					</div>
+					<div class="row mt-4">
+						<div th:switch="${deletable.type}" class="col-5 text-center">
+							<p th:case="account" th:text="#{label.account}" class="fs-5"></p>
+							<p th:case="recensione" th:text="#{label.recensione}" class="fs-5"></p>
+						</div>
+						<div class="col-7 text-center">
+							<p class="fs-5" th:text="${deletable.description}"></p>
+						</div>
+					</div>
+					<div class="row mt-4">
+						<div class="col-12 text-center">
+							<a th:href="@{deleteconfirm/deleteItem}" class="btn btn-primary small-button" th:text="#{btn.confirm}"></a>&emsp;
+							<a th:href="@{${deletable.redirect}}" class="btn btn-secondary small-button" th:text="#{btn.back}"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
