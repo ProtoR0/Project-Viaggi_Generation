@@ -43,3 +43,15 @@ document.getElementById("orologio").innerHTML = (ora + ":" + minuti + ":" + seco
 setTimeout("data()", 1000);
 
 }
+
+document.getElementById("invia").addEventListener("click", click);
+function click(){
+
+    document.getElementById("nome").value = "";
+    document.getElementById("cognome").value = "";
+    document.getElementById("telefono").value ="";
+    document.getElementById("email").value = "";
+    document.getElementById("messaggio").value = "";
+    document.getElementById("curriculum").value = "";
+    document.getElementById("conferma").innerHTML ="<p style='background-color: red; color: white;'>Candidatura inviata a: viaggi.italiani@gmail.com, la ricontatteremo quanto prima.</p>";
+}
