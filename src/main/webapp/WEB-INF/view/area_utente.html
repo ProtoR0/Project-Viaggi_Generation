@@ -86,7 +86,7 @@
                         </span>
                         <form action="area_utente/inserimentoFoto" method="POST" enctype="multipart/form-data">
                             <input type="file" id="foto" name="foto" class="form-control" multiple>
-                            <input id="btn" type="submit" class="btn btn-primary btn-block" />
+                            <input id="btn" type="submit" class="btn btn-primary btn-block mt-3" />
                             <!-- conferma invio pubblicazione -->
                         </form>
                         <br>
@@ -117,10 +117,10 @@
                                 <td class="align-middle" th:text="${r.durata}"></td>
 
                                 <td class="align-middle text-end">
-                                    <a th:href="@{/area_utente(id=${r.id})}" class="btn btn-primary btn-sm small-button"
+                                    <a th:href="@{/area_utente(id=${r.id})}" class="btn btn-primary btn-sm small-button m-1"
                                         th:text="#{btn.edit}"></a>
                                     <a th:href="@{/area_utente/delete(id=${r.id}, type='article')}"
-                                        class="btn btn-danger btn-sm small-button" th:text="#{btn.delete}"></a>
+                                        class="btn btn-danger btn-sm small-button m-1" th:text="#{btn.delete}"></a>
                                 </td>
                             </tr>
                         </tbody>
