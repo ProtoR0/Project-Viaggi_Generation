@@ -46,7 +46,7 @@ setTimeout("data()", 1000);
 
 document.getElementById("invia").addEventListener("click", click);
 function click(){
-
+    
     document.getElementById("nome").value = "";
     document.getElementById("cognome").value = "";
     document.getElementById("telefono").value ="";
